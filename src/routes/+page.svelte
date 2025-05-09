@@ -1,7 +1,7 @@
 <script>
   import Badges from "$lib/components/Badges.svelte";
   import FullWidthSection from "$lib/components/FullWidthSection.svelte";
-  import HomeContent from "$lib/components/HomeContent.svelte";
+  import HomeContent from "$lib/components/content/HomeContent.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
   import Logo from "$lib/components/Logo.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
@@ -12,6 +12,9 @@
    */
   const hrStyle = "hr-styled";
 </script>
+
+<link rel="canonical" href="https://netwk.pro/" />
+<base href="./" target="_self" />
 
 <section id="home-page">
   <FullWidthSection>

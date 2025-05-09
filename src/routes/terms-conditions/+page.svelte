@@ -1,43 +1,45 @@
 <script>
-  import AboutContent from "$lib/components/content/AboutContent.svelte";
   import Badges from "$lib/components/Badges.svelte";
   import FullWidthSection from "$lib/components/FullWidthSection.svelte";
+  import TermsConditionsContent from "$lib/components/content/TermsConditionsContent.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
 
   const hrStyle = "hr-styled";
 </script>
 
-<link rel="canonical" href="https://netwk.pro/about" />
-<base href="./about" target="_self" />
+<link rel="canonical" href="https://netwk.pro/terms-conditions" />
+<base href="./terms-conditions" target="_self" />
 
-<section id="about">
+<section id="terms-conditions">
   <FullWidthSection>
-    <!-- BEGIN MAIN CONTENT -->
+    <!-- BEGIN TERMS AND CONDITIONS -->
     <section id="main-content">
-      <AboutContent />
+      <TermsConditionsContent />
     </section>
-    <!-- END MAIN CONTENT -->
+    <!-- END TERMS AND CONDITIONS -->
 
     <div class="spacer"></div>
 
-    <!-- SOCIAL MEDIA -->
+    <!-- BEGIN SOCIAL MEDIA -->
     <section id="social-media">
       <SocialMedia />
     </section>
+    <!-- END SOCIAL MEDIA -->
 
     <hr class={hrStyle} />
 
     <div class="spacer"></div>
 
-    <!-- LEGAL NAVIGATION -->
+    <!-- BEGIN LEGAL -->
     <section id="legal-nav">
       <LegalNav />
     </section>
+    <!-- END LEGAL -->
 
     <div class="spacer"></div>
 
-    <!-- BADGES -->
+    <!-- BEGIN BADGES -->
     <section id="badges">
       <Badges />
     </section>

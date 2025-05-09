@@ -14,10 +14,10 @@
    */
   const rows = [
     [
-      { href: "#terms", text: "Terms of Use", target: "_self" },
-      { href: "#privacy-policy", text: "Privacy Policy", target: "_self" },
+      { href: "./terms-of-use", text: "Terms of Use", target: "_self" },
+      { href: "./privacy-policy", text: "Privacy Policy", target: "_self" },
     ],
-    [{ href: "#license", text: "Legal", target: "_self", colspan: 2 }],
+    [{ href: "./license", text: "Legal", target: "_self", colspan: 2 }],
   ];
 </script>
 

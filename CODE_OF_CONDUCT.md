@@ -191,8 +191,8 @@ For answers to common questions about this code of conduct, see the FAQ at
 
 <div style="font-size: 12px; font-weight: bold; text-align: center;">
 
-[Home](https://netwk.pro) &nbsp; | &nbsp; [Terms of Use](https://netwk.pro/terms-of-use.html)  
-[Privacy Policy](https://netwk.pro/privacy.html) &nbsp; | &nbsp; [Legal](https://netwk.pro/legal.html)
+[Home](https://netwk.pro) &nbsp; | &nbsp; [Terms of Use](https://netwk.pro/terms-of-use)  
+[Privacy Policy](https://netwk.pro/privacy-policy) &nbsp; | &nbsp; [Legal](https://netwk.pro/legal)
 
 </div>
 
@@ -203,7 +203,7 @@ For answers to common questions about this code of conduct, see the FAQ at
 Copyright &copy; 2025  
 **[Network Pro Strategies](https://netwk.pro/)** (Network Pro&trade;)
 
-Network Pro&trade;, the shield logo, and the "Locking Down Networks&trade;" slogan are [trademarks](https://netwk.pro/legal.html#trademark) of Network Pro Strategies.
+Network Pro&trade;, the shield logo, and the "Locking Down Networks&trade;" slogan are [trademarks](https://netwk.pro/legal#trademark) of Network Pro Strategies.
 
 Licensed under **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)** and the **[GNU GPL](https://spdx.org/licenses/GPL-3.0-or-later.html)**, as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

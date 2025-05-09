@@ -15,9 +15,11 @@
    * @type {Error}
    */
   export let error;
+
+  const centerText = "center-text";
 </script>
 
 <main>
-  <h1>{status}</h1>
-  <p>{error?.message || "Page not found"}</p>
+  <h1 class={centerText}>{status}</h1>
+  <p class={centerText}>{error?.message || "Page not found"}</p>
 </main>

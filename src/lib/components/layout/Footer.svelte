@@ -41,7 +41,7 @@
   const licenses = [
     {
       type: "CC BY 4.0",
-      url: "#cc-by",
+      url: "./license#cc-by",
       externalUrl: "https://creativecommons.org/licenses/by/4.0/",
       icons: [
         {
@@ -56,7 +56,7 @@
     },
     {
       type: "GNU GPL",
-      url: "#gnu-gpl",
+      url: "./license#gnu-gpl",
       externalUrl: "https://fsf.org",
       description:
         "as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.",

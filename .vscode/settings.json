@@ -42,5 +42,25 @@
   // Custom CSS data for FontAwesome classes
   "css.customData": [
     ".vscode/customData.json" // Path to your custom data file
+  ],
+  "markdown.validate.ignoredLinks": [
+    "#ownership",
+    "#trademark",
+    "#branding",
+    "#licensed-material",
+    "#licenses",
+    "#dlnotes",
+    "#cc-by",
+    "#gnu-gpl",
+    "#third-party",
+    "#prohibited-uses",
+    "#disclaimer",
+    "#contact",
+    "#revisions",
+    "#attribution",
+    "#top",
+    "./legal",
+    "./terms-of-use",
+    "./privacy-policy"
   ]
 }

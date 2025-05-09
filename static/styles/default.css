@@ -216,9 +216,9 @@ footer .container {
 
 .bnav td {
   padding: 10px;
-  font-size: 0.875em;
+  font-size: 0.875rem;
   font-weight: bold;
-  line-height: 1.125em;
+  line-height: 1.125rem;
   border-style: none;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
@@ -227,8 +227,8 @@ footer .container {
 
 .bnav th {
   padding: 10px;
-  font-size: 0.875em;
-  line-height: 1.125em;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   border-style: none;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
@@ -265,9 +265,9 @@ footer .container {
 
 .bnav2 td {
   padding: 10px;
-  font-size: 0.875em;
+  font-size: 0.875rem;
   font-weight: bold;
-  line-height: 1.125em;
+  line-height: 1.125rem;
   border-style: none;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
@@ -276,8 +276,8 @@ footer .container {
 
 .bnav2 th {
   padding: 12px;
-  font-size: 0.875em;
-  line-height: 1.125em;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   border-style: none;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
@@ -307,7 +307,6 @@ footer .container {
 }
 
 .pgp {
-  /*width: 100%;*/
   margin: 0 auto;
   border-collapse: collapse;
   border-spacing: 0;
@@ -315,8 +314,8 @@ footer .container {
 
 .pgp td {
   padding: 10px;
-  font-size: 0.875em;
-  line-height: 1.125em;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   border-style: none;
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
@@ -325,8 +324,8 @@ footer .container {
 
 .pgp th {
   padding: 10px;
-  font-size: 0.875em;
-  line-height: 1.125em;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   border-color: black;
   border-style: solid;
   border-width: 1px;
@@ -381,8 +380,8 @@ footer .container {
 }
 
 .index-title2 {
-  font-size: 1.25em;
-  line-height: 1.625em;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
   letter-spacing: -0.015em;
   text-align: center;
   font-variant: small-caps;
@@ -397,8 +396,8 @@ footer .container {
 }
 
 .index2 {
-  font-size: 1.5em;
-  line-height: 1.75em;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   letter-spacing: -0.035em;
   text-align: center;
   font-variant: small-caps;
@@ -412,8 +411,8 @@ footer .container {
 }
 
 .subhead {
-  font-size: 1.5em;
-  line-height: 1.75em;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
   letter-spacing: -0.035em;
   font-variant: small-caps;
 }
@@ -431,8 +430,8 @@ footer .container {
 }
 
 .small-text {
-  font-size: 0.75em;
-  line-height: 1.125em;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
 }
 
 .large-text-center {
@@ -466,8 +465,8 @@ footer .container {
 }
 
 .copyright {
-  font-size: 0.75em;
-  line-height: 1.125em;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
   text-align: center;
 }
 
@@ -477,8 +476,8 @@ footer .container {
 
 .center-nav {
   padding: 5px;
-  font-size: 0.875em;
-  line-height: 1.125em;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   text-align: center;
 }
 
@@ -486,8 +485,8 @@ footer .container {
 .block {
   width: 100%;
   border: none;
-  font-size: 0.75em;
-  line-height: 1.125em;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
   background: none;
   border-radius: 0;
   outline: none;
