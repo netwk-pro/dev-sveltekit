@@ -1,20 +1,25 @@
-name: Build and Deploy to GitHub Pages
+# .github/workflows/build.yml
+#
+# SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+# This file is part of Network Pro
+#
+# When a release is created or this workflow is manually triggered, it will:
+# (1) confirm the CodeQL analysis was successful, (2) test JavaScript using
+# Mocha and Chai frameworks, (3) check linting with ESLint and formatting with
+# Prettier without making changes, (4) build the project using node lts/* on
+# ubuntu-24.04, and (5) publish the package to the npmjs and GPR registries.
+#
+# The workflow to upload static content to GitHub Pages (upload.yml) will
+# kick off following successful completion of this workflow.
+#
+# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+name: Build Site
 
 on:
-  #release:
-  #types: [created]
+  release:
+    types: [created]
   workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write # Required for deployment to GitHub Pages
-  id-token: write # Required for OIDC authentication
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
   check-codeql:
@@ -73,29 +78,3 @@ jobs:
         with:
           name: github-pages
           path: build/
-
-  deploy:
-    name: Deploy to GitHub Pages
-    needs: [check-codeql, build]
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-24.04
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4.2.2
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Download Build Artifact
-        uses: actions/download-artifact@v4.3.0
-        with:
-          name: github-pages
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
