@@ -1,4 +1,13 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const termsLink = `${base}/terms-of-use/`;
+  const privacyLink = `${base}/privacy-policy/`;
+  const licenseLink = `${base}/license/`;
+
   /**
    * Navigation link object.
    * @typedef {Object} NavLink
@@ -14,10 +23,25 @@
    */
   const rows = [
     [
-      { href: "./terms-of-use", text: "Terms of Use", target: "_self" },
-      { href: "./privacy-policy", text: "Privacy Policy", target: "_self" },
+      {
+        href: termsLink,
+        text: "Terms of Use",
+        target: "_self",
+      },
+      {
+        href: privacyLink,
+        text: "Privacy Policy",
+        target: "_self",
+      },
     ],
-    [{ href: "./license", text: "Legal", target: "_self", colspan: 2 }],
+    [
+      {
+        href: licenseLink,
+        text: "Legal",
+        target: "_self",
+        colspan: 2,
+      },
+    ],
   ];
 </script>
 
@@ -30,10 +54,7 @@
             <td
               class={link.colspan ? "bnav-cell" : "bnav-nav"}
               colspan={link.colspan || 1}>
-              <a
-                rel="noopener noreferrer"
-                href={link.href}
-                target={link.target}>
+              <a href={link.href} target={link.target}>
                 {link.text}
               </a>
             </td>

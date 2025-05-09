@@ -1,4 +1,12 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const spotlightLink = `${base}/html/spotlight.html`;
+  const blogLink = `${base}/docs/blog/`;
+
   /**
    * CSS class for the index headings.
    * @type {string}
@@ -56,7 +64,7 @@
   📡
   <em>
     <strong>Stay informed:</strong> Follow our
-    <a {rel} href="./docs/blog/" target={targetSelf}>blog</a>
+    <a href={blogLink} target={targetSelf}>blog</a>
     and social channels for actionable insights, implementation guides, and the latest
     cybersecurity developments.
   </em>
@@ -68,13 +76,13 @@
 
 <p class={classLarge}>
   <strong>
-    <a {rel} href="./docs/blog/" target={targetSelf}>Network Pro Blog</a>
+    <a href={blogLink} target={targetSelf}>Network Pro Blog</a>
   </strong>
 </p>
 
 <p class={classLarge}>
   <strong>
-    <a {rel} href="./html/spotlight.html" target={targetSelf}>FOSS Spotlight</a>
+    <a href={spotlightLink} target={targetSelf}>FOSS Spotlight</a>
   </strong>
 </p>
 

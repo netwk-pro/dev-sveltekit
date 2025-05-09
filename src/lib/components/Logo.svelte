@@ -1,5 +1,5 @@
 <script>
-  import logoSrc from "$lib/img/logo-transparent.png"; // Adjust the path relative to the file
+  import logoSrc from "$lib/img/logo-transparent.png";
 
   /**
    * Decoding mode for the image.
@@ -56,5 +56,7 @@
   {sloganA}<br />
   {sloganB}
 </div>
+
+<div class="spacer"></div>
 
 <h2 class="index-title2">Security | Networking | Privacy</h2>

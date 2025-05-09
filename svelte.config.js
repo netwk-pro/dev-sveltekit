@@ -27,12 +27,14 @@ const config = {
     }),
     // Paths configuration for deployment
     paths: {
-      base: "", // Use root domain for deployment (update if deploying to a subdirectory)
+      // Use '' in dev mode, and process.env.BASE_PATH in production
+      base: process.argv.includes("dev") ? "" : process.env.BASE_PATH,
     },
-    prerender: {
-      default: true, // Enable prerendering by default for static pages
-      entries: [], // Keep entries empty to rely on SPA fallback for dynamic routes
-    },
+    //alias: {
+    // this will match a directory and its contents
+    // (`my-directory/x` resolves to `path/to/my-directory/x`)
+    // $base: "$app/paths",
+    // },
   },
 
   // File extensions for Svelte and mdsvex

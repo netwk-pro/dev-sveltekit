@@ -1,5 +1,11 @@
 <script>
   import { onMount } from "svelte";
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const legalLink = `${base}/docs/legal/`;
 
   /**
    * Table of Contents Links
@@ -104,10 +110,7 @@
       <strong>Formats Available:</strong> &nbsp;<span class="visited"
         >HTML</span>
       |
-      <a
-        rel={constants.rel}
-        href="https://netwk.pro/docs/legal/"
-        target={constants.targetSelf}>Markdown</a>
+      <a href={legalLink} target={constants.targetSelf}>Markdown</a>
     </sup>
   </p>
 </section>
@@ -127,10 +130,7 @@
       <p>
         Copyright &copy; 2025
         <strong>
-          <a
-            rel={constants.rel}
-            href="https://netwk.pro"
-            target={constants.targetBlank}>
+          <a href="https://netwk.pro" target={constants.targetBlank}>
             Network Pro Strategies
           </a>
         </strong>

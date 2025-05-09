@@ -7,6 +7,9 @@
 .markdownlint.jsonc
 
 
+# SvelteKit
+.svelte-kit/*
+
 # Node.js dependencies
 node_modules
 

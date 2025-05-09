@@ -1,5 +1,14 @@
 <script>
   import { onMount } from "svelte";
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const tandcLink = `${base}/terms-conditions/`;
+  const privacyLink = `${base}/privacy-policy/`;
+  const licenseLink = `${base}/license/`;
+  const termsLink = `${base}/docs/terms-use/`;
 
   /**
    * Table of Contents Links
@@ -71,7 +80,7 @@
   </span>
 </section>
 
-<section id="site-title">
+<section id="page-title">
   <h1>Website Terms of Use</h1>
   <p>
     <strong>{constants.company}</strong><br />
@@ -98,9 +107,7 @@
   available via this website and its associated web properties. For provisions
   governing our consulting and implementation services, please refer to the
   applicable
-  <a rel={constants.rel} href="./terms-conditions" target={constants.targetSelf}
-    >Terms and Conditions</a
-  >.
+  <a href={tandcLink} target={constants.targetSelf}>Terms and Conditions</a>.
 </p>
 
 <hr />
@@ -111,10 +118,8 @@
       <strong>Formats Available:</strong> &nbsp;<span class="visited"
         >HTML</span>
       |
-      <a
-        rel={constants.rel}
-        href="https://netwk.pro/docs/terms-use/"
-        target={constants.targetSelf}>Markdown</a>
+      <a rel={constants.rel} href={termsLink} target={constants.targetSelf}
+        >Markdown</a>
     </sup>
   </p>
 </section>
@@ -220,10 +225,10 @@
   <p class="bquote">
     <strong>Note:</strong> For more details regarding our privacy practices,
     refer to our
-    <a rel={constants.rel} href="./privacy-policy" target={constants.targetSelf}
+    <a rel={constants.rel} href={privacyLink} target={constants.targetSelf}
       >Privacy Policy</a
     >. For licensing terms and content usage rights, please visit our
-    <a rel={constants.rel} href="./license" target={constants.targetSelf}
+    <a rel={constants.rel} href={licenseLink} target={constants.targetSelf}
       >Legal, Copyright, and Licensing</a>
     page.
   </p>

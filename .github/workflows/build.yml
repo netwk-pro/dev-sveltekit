@@ -75,14 +75,19 @@ jobs:
             ${{ runner.os }}-node-lts-
             ${{ runner.os }}-node-
 
-      - name: Install dependencies and build
+      - name: Install dependencies
         id: build
+        run: npm install
+
+      - name: Build project
+        id: build
+        env:
+          BASE_PATH: "/${{ github.event.repository.name }}"
         run: |
-          npm ci
           npm run build
 
-      - name: Upload GitHub Pages artifact
+      - name: Upload Artifacts
         id: deployment
         uses: actions/upload-pages-artifact@v3.0.1
         with:
-          path: build/
+          path: "build/"

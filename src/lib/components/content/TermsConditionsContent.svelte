@@ -1,4 +1,12 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const termsLink = `${base}/terms-of-use/`;
+  const tandcLink = `${base}/docs/terms-conditions/`;
+
   const constants = {
     company: "Network Pro Strategies",
     effectiveDate: "May 8, 2025",
@@ -58,9 +66,7 @@
   These Terms and Conditions apply exclusively to the provision of our
   consulting and implementation services. For all other uses of our website and
   associated platforms, please refer to the applicable
-  <a rel={constants.rel} href="./terms-of-use" target={constants.targetSelf}>
-    Website Terms of Use
-  </a>.
+  <a href={termsLink} target={constants.targetSelf}> Website Terms of Use </a>.
 </p>
 
 <hr />
@@ -71,10 +77,7 @@
       <strong>Formats Available:</strong> &nbsp;<span class="visited"
         >HTML</span>
       |
-      <a
-        rel={constants.rel}
-        href="https://netwk.pro/docs/terms-conditions/"
-        target={constants.targetSelf}>Markdown</a>
+      <a href={tandcLink} target={constants.targetSelf}>Markdown</a>
       |
       <a
         rel={constants.rel}

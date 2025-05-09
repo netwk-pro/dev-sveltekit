@@ -1,4 +1,12 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const ccbyLink = `${base}/license/#cc-by`;
+  const gplLink = `${base}/license/#gnu-gpl`;
+
   /**
    * Badge link object.
    * @typedef {Object} Badge
@@ -14,24 +22,18 @@
    */
   const badges = [
     {
-      href: "./legal#cc-by",
+      href: ccbyLink,
       src: "https://forthebadge.com/images/badges/cc-by.png",
       alt: "Creative Commons BY",
       class: "badge-cc-by",
     },
     {
-      href: "./legal#gnu-gpl",
+      href: gplLink,
       src: "https://img.shields.io/badge/LICENSE-GPLv3-red?style=for-the-badge&labelColor=9b9b9b&color=d0021b",
       alt: "GPL 3.0 or Later",
       class: "badge-gpl",
     },
   ];
-
-  /**
-   * Relation attribute for external links.
-   * @type {string}
-   */
-  const rel = "noopener noreferrer";
 </script>
 
 <div class="bnav2-wrap">
@@ -40,7 +42,7 @@
       <tr>
         {#each badges as badge}
           <td class="bnav2-nav">
-            <a {rel} href={badge.href} target="_self">
+            <a href={badge.href} target="_self">
               <img
                 decoding="async"
                 loading="lazy"

@@ -1,4 +1,13 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const ccbyLink = `${base}/license/#cc-by`;
+  const gnugplLink = `${base}/license/#gnu-gpl`;
+  const trademarkLink = `${base}/license/#trademark`;
+
   /**
    * Creator details object.
    * @typedef {Object} Creator
@@ -41,7 +50,7 @@
   const licenses = [
     {
       type: "CC BY 4.0",
-      url: "./license#cc-by",
+      url: ccbyLink,
       externalUrl: "https://creativecommons.org/licenses/by/4.0/",
       icons: [
         {
@@ -56,10 +65,9 @@
     },
     {
       type: "GNU GPL",
-      url: "./license#gnu-gpl",
+      url: gnugplLink,
       externalUrl: "https://fsf.org",
-      description:
-        "as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.",
+      description: "Free Software Foundation",
     },
   ];
 
@@ -102,7 +110,7 @@
   <p>
     Copyright &copy; 2025<br />
     <a
-      rel="cc:attributionURL dct:creator noopener noreferrer"
+      rel="cc:attributionURL dct:creator"
       property="cc:attributionName"
       href={creator.url}
       target={targetBlank}>
@@ -114,7 +122,7 @@
   <!-- Trademark Section -->
   <p>
     {creator.trademark}, the shield logo, and the "{creator.slogan}" slogan are
-    <a {rel} href="#trademark" target={targetSelf}>trademarks</a>
+    <a href={trademarkLink} target={targetSelf}>trademarks</a>
     of {creator.name}.
   </p>
 
@@ -155,10 +163,11 @@
         <a href={license.url} target={targetSelf} rel={relLicense}>
           <strong>{license.type}</strong>
         </a>
-        , {license.description}
-        <a {rel} href={license.externalUrl} target={targetBlank}>
-          Free Software Foundation
-        </a>
+        , as published by the
+        <a {rel} href={license.externalUrl} target={targetBlank}
+          >{license.description}</a
+        >, either version 3 of the License, or (at your option) any later
+        version.
       {/if}
       {index < licenses.length - 1 ? ", and the " : ""}
     {/each}

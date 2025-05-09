@@ -1,15 +1,21 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
   import Badges from "$lib/components/Badges.svelte";
   import FullWidthSection from "$lib/components/FullWidthSection.svelte";
   import TermsConditionsContent from "$lib/components/content/TermsConditionsContent.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
 
+  const tandcLink = `${base}/terms-conditions/`;
   const hrStyle = "hr-styled";
 </script>
 
-<link rel="canonical" href="https://netwk.pro/terms-conditions" />
-<base href="./terms-conditions" target="_self" />
+<link rel="canonical" href="https://dev.netwk.pro/terms-conditions/" />
+<base href={tandcLink} target="_self" />
 
 <section id="terms-conditions">
   <FullWidthSection>

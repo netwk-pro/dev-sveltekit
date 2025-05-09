@@ -1,4 +1,10 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const aboutLink = `${base}/docs/`;
   const rel = "noopener noreferrer";
   const decoding = "async";
   const loading = "lazy";
@@ -14,7 +20,7 @@
     },
     {
       label: "Markdown",
-      href: "./docs/",
+      href: aboutLink,
       target: "_self",
     },
   ];
@@ -76,7 +82,7 @@
   <sup>
     <strong>Formats:</strong>&nbsp;
     <span class="visited">HTML</span> |
-    <a {rel} href={navLinks[1].href} target={tgtBlank}>{navLinks[1].label}</a>
+    <a href={navLinks[1].href} target={tgtBlank}>{navLinks[1].label}</a>
   </sup>
 </p>
 
@@ -137,8 +143,7 @@
 <div class="spacer"></div>
 
 <p>
-  <a rel="noopener noreferrer" href="https://contact.neteng.pro" target="_blank"
-    >Let's connect</a>
+  <a {rel} href="https://contact.neteng.pro" target="_blank">Let's connect</a>
   to discuss how we can help secure and strengthen your business today.
 </p>
 

@@ -1,26 +1,26 @@
 {
-  "extends": "./.svelte-kit/tsconfig.json",
+  "extends": "./.svelte-kit/tsconfig.json", // Extend SvelteKit's generated tsconfig
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": ".", // Base path for resolving non-relative imports
     "paths": {
-      "$lib": ["src/lib"],
-      "$lib/*": ["src/lib/*"],
-      "$types": [".svelte-kit/types"]
+      "$lib": ["src/lib"], // Alias for the lib directory
+      "$lib/*": ["src/lib/*"], // Alias for lib subdirectories
+      "$types": [".svelte-kit/types"] // Alias for SvelteKit types
     }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.js",
-    "src/**/*.svelte",
-    "tests/**/*.ts",
-    "tests/**/*.js",
-    "tests/**/*.svelte",
-    ".svelte-kit/types/**/*.d.ts"
+    "src/**/*.ts", // Include TypeScript files
+    "src/**/*.js", // Include JavaScript files
+    "src/**/*.svelte", // Include Svelte files
+    "tests/**/*.ts", // Include TypeScript test files
+    "tests/**/*.js", // Include JavaScript test files
+    "tests/**/*.svelte", // Include Svelte test files
+    ".svelte-kit/types/**/*.d.ts" // Include SvelteKit-generated types
   ],
   "exclude": [
-    "node_modules/**",
-    "dist/**",
-    "src/service-worker.js",
+    "node_modules/**", // Exclude node_modules
+    "dist/**", // Exclude distribution folder
+    "src/service-worker.js", // Exclude service workers
     "src/service-worker/**/*.js",
     "src/service-worker.ts",
     "src/service-worker/**/*.ts"

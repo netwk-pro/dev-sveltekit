@@ -1,8 +1,15 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
   import Badges from "$lib/components/Badges.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
   import { onMount } from "svelte";
+
+  const privacyLink = `${base}/docs/privacy/`;
 
   /**
    * Table of Contents Links
@@ -114,12 +121,7 @@
       <strong>Formats Available:</strong> &nbsp;<span class="visited"
         >HTML</span>
       |
-      <a
-        rel={constants.rel}
-        href="https://netwk.pro/docs/privacy/"
-        target={constants.targetSelf}>
-        Markdown
-      </a>
+      <a href={privacyLink} target={constants.targetSelf}> Markdown </a>
     </sup>
   </p>
 </section>

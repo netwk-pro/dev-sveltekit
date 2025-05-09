@@ -49,7 +49,7 @@
         {#each socialLinks as { href, label, rel = "noopener noreferrer", iconClass }}
           <td class="soc-fa">
             <p>
-              <a {href} {rel} target="_blank" aria-label={label}>
+              <a {rel} {href} target="_blank" aria-label={label}>
                 <span class={iconClass}></span>
               </a>
             </p>

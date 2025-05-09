@@ -17,7 +17,8 @@
 .vercel
 .netlify
 .wrangler
-/.svelte-kit
+.svelte-kit/*
+!.svelte-kit/tsconfig.json
 /build
 
 # OS
@@ -170,14 +171,10 @@ public
 
 # Optional stylelint cache
 
-# SvelteKit build / generate output
-.svelte-kit
-
 ### Svelte ###
 # gitignore template for the SvelteKit, frontend web component framework
 # website: https://kit.svelte.dev/
 
-.svelte-kit/
 package
 
 ### VisualStudioCode ###

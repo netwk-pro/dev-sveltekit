@@ -1,3 +1,6 @@
+export const prerender = true;
+//export const trailingSlash = "always";
+
 export function load({ url }) {
   // Define metadata for specific routes
   const meta = {

@@ -1,15 +1,21 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
   import AboutContent from "$lib/components/content/AboutContent.svelte";
   import Badges from "$lib/components/Badges.svelte";
   import FullWidthSection from "$lib/components/FullWidthSection.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
 
+  const aboutLink = `${base}/about/`;
   const hrStyle = "hr-styled";
 </script>
 
-<link rel="canonical" href="https://netwk.pro/about" />
-<base href="./about" target="_self" />
+<link rel="canonical" href="https://dev.netwk.pro/about/" />
+<base href={aboutLink} target="_self" />
 
 <section id="about">
   <FullWidthSection>

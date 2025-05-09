@@ -1,4 +1,13 @@
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const homeLink = `${base}/`;
+  const aboutLink = `${base}/about/`;
+  const blogLink = `${base}/docs/blog/`;
+
   /**
    * Navigation link object.
    * @typedef {Object} NavItem
@@ -13,9 +22,14 @@
    * @type {NavItem[]}
    */
   const nav = [
-    { label: "home", href: "./", target: "_self", external: false },
-    { label: "about", href: "./about", target: "_self", external: false },
-    { label: "blog", href: "./docs/blog/", target: "_self", external: false },
+    { label: "home", href: homeLink, target: "_self", external: false },
+    { label: "about", href: aboutLink, target: "_self", external: false },
+    {
+      label: "blog",
+      href: blogLink,
+      target: "_self",
+      external: false,
+    },
     {
       label: "discussions",
       href: "https://github.com/netwk-pro/netwk-pro.github.io/discussions",
