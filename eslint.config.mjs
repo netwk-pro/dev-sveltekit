@@ -49,7 +49,7 @@ export default [
     files: ["**/*.mjs", "**/*.js"],
     languageOptions: {
       globals: GLOBALS,
-      ecmaVersion: 2022, // Use ES2022 for compatibility
+      ecmaVersion: "latest",
       sourceType: "module",
     },
     rules: {

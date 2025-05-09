@@ -12,8 +12,8 @@ import { mdsvex } from "mdsvex"; // mdsvex for Markdown support
 const config = {
   // Preprocessors for enhanced functionality (vitePreprocess + mdsvex for Markdown support)
   preprocess: [
-    vitePreprocess(),
-    mdsvex({ extension: ".svx" }), // Configure mdsvex with .svx extension
+    vitePreprocess(), // Simplified (TypeScript is natively supported)
+    mdsvex({ extensions: [".svx", ".md"] }), // Configure mdsvex with .svx and .md extensions
   ],
 
   kit: {
@@ -21,18 +21,19 @@ const config = {
     adapter: adapter({
       pages: "build", // Directory for generated static files
       assets: "build", // Directory for static assets
-      fallback: null, // No fallback file (e.g., for SPA mode)
+      fallback: null, // No fallback file (update to "index.html" if SPA fallback is needed)
     }),
     // Paths configuration for deployment
     paths: {
-      base: "", // Use root domain for deployment (no base path)
+      base: "", // Use root domain for deployment (update if deploying to a subdirectory)
     },
   },
 
   // File extensions for Svelte and mdsvex
-  extensions: [".svelte", ".svx"],
+  extensions: [".svelte", ".svx", ".md"], // Added .md for Markdown support
 };
 
 export default config;
+
 // Consult https://svelte.dev/docs#compile-time-svelte-preprocess
 // for more information about preprocessors

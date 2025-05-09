@@ -1,62 +1,47 @@
 <script>
+  import AboutContent from "$lib/components/AboutContent.svelte";
   import Badges from "$lib/components/Badges.svelte";
   import FullWidthSection from "$lib/components/FullWidthSection.svelte";
-  import HomeContent from "$lib/components/HomeContent.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
-  import Logo from "$lib/components/Logo.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
 
-  /**
-   * @type {string}
-   * Style class for the horizontal rule element.
-   */
   const hrStyle = "hr-styled";
 </script>
 
-<section id="home-page">
+<section id="about">
   <FullWidthSection>
-    <!-- BEGIN TITLE -->
-    <section id="site-title">
-      <Logo />
-    </section>
-    <!-- END TITLE -->
-
-    <div class="spacer"></div>
-
-    <hr class={hrStyle} />
-
-    <div class="spacer"></div>
-
-    <!-- BEGIN MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
     <section id="main-content">
-      <HomeContent />
+      <AboutContent />
     </section>
-    <!-- END MAIN CONTENT -->
 
     <div class="spacer"></div>
 
-    <!-- BEGIN SOCIAL MEDIA -->
+    <!-- SOCIAL MEDIA -->
     <section id="social-media">
       <SocialMedia />
     </section>
-    <!-- END SOCIAL MEDIA -->
 
     <hr class={hrStyle} />
 
     <div class="spacer"></div>
 
-    <!-- BEGIN LEGAL -->
+    <!-- LEGAL NAVIGATION -->
     <section id="legal-nav">
       <LegalNav />
     </section>
-    <!-- END LEGAL -->
 
     <div class="spacer"></div>
 
-    <!-- BEGIN BADGES -->
+    <!-- BADGES -->
     <section id="badges">
       <Badges />
     </section>
-    <!-- END BADGES -->
   </FullWidthSection>
 </section>
+
+<style>
+  .spacer {
+    margin: 1rem 0;
+  }
+</style>

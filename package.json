@@ -1,37 +1,38 @@
 {
 	"name": "@networkpro/dev-sveltekit",
 	"private": false,
-	"version": "0.0.1",
+	"sideEffects": false,
+	"version": "0.0.2",
 	"type": "module",
-  "description": "Locking Down Networks, Unlocking Confidence | Security, Networking, Privacy — Network Pro Strategies",
-  "keywords": [
-    "security",
-    "networking",
-    "privacy",
-    "cybersecurity",
-    "advisory",
-    "consulting",
-    "android",
-    "linux",
-    "blog",
-    "development"
-  ],
-  "homepage": "https://netwk.pro",
-  "bugs": {
-    "url": "https://github.com/netwk-pro/netwk-pro.github.io/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/netwk-pro/dev-sveltekit.git"
-  },
-  "license": "CC-BY-4.0 OR GPL-3.0-or-later",
-  "author": {
-    "name": "Scott Lopez",
-    "email": "github@sl.neteng.cc",
-    "url": "https://bio.neteng.pro"
-  },
-  "main": "src/app.html",
-  "scripts": {
+	"description": "Locking Down Networks, Unlocking Confidence | Security, Networking, Privacy — Network Pro Strategies",
+	"keywords": [
+		"security",
+		"networking",
+		"privacy",
+		"cybersecurity",
+		"advisory",
+		"consulting",
+		"android",
+		"linux",
+		"blog",
+		"development"
+	],
+	"homepage": "https://netwk.pro",
+	"bugs": {
+		"url": "https://github.com/netwk-pro/netwk-pro.github.io/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/netwk-pro/dev-sveltekit.git"
+	},
+	"license": "CC-BY-4.0 OR GPL-3.0-or-later",
+	"author": {
+		"name": "Scott Lopez",
+		"email": "github@sl.neteng.cc",
+		"url": "https://bio.neteng.pro"
+	},
+	"main": "src/app.html",
+	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",

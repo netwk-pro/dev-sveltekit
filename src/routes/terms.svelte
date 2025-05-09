@@ -62,7 +62,7 @@
       on:click={(event) =>
         handleLinkClick(
           event,
-          "https://spdx.dev/learn/handling-license-info/",
+          "https://spdx.dev/learn/handling-license-info/"
         )}>
       SPDX License Identifier
     </a>

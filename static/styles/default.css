@@ -307,6 +307,7 @@ footer .container {
 }
 
 .pgp {
+  /*width: 100%;*/
   margin: 0 auto;
   border-collapse: collapse;
   border-spacing: 0;
@@ -336,11 +337,13 @@ footer .container {
 
 .pgp .pgp-col1 {
   text-align: right;
+  padding-right: 1rem; /* Add spacing between columns */
   vertical-align: middle;
 }
 
 .pgp .pgp-col2 {
   text-align: left;
+  padding-left: 1rem; /* Add spacing between columns */
   vertical-align: middle;
 }
 
@@ -355,6 +358,7 @@ footer .container {
 
   .pgp-wrap {
     margin: auto 0;
+    margin-top: 2rem;
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;
   }
@@ -490,4 +494,17 @@ footer .container {
   resize: none;
 }
 
-/* height: 50vh; */
+.fingerprint {
+  display: block;
+  font-weight: bold;
+  white-space: pre-line; /* Ensures newlines are respected for "\n" */
+}
+
+.pgp-image {
+  width: 125px;
+  height: 125px;
+}
+
+.spacer {
+  margin: 2rem 0;
+}

@@ -18,14 +18,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // ESLint configuration
-  "eslint.workingDirectories": ["D:\\Netwk-Pro\\git\\my-new-project"],
-  "eslint.validate": [
-    "svelte",
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
+  "eslint.workingDirectories": ["D:\\Netwk-Pro\\git\\dev-svelte"],
+  "eslint.validate": ["svelte", "javascript", "javascriptreact"],
   "eslint.lintTask.enable": true,
   "eslint.lintTask.options": "--ext .mjs,.js,.svelte --config eslint.config.mjs .",
   "eslint.useESLintClass": true,
@@ -34,8 +28,6 @@
   "eslint.probe": [
     "javascript",
     "javascriptreact",
-    "typescript",
-    "typescriptreact",
     "html",
     "markdown",
     "json",
@@ -43,7 +35,7 @@
     "svelte"
   ],
   // Stylelint configuration
-  "stylelint.configBasedir": "D:\\Netwk-Pro\\git\\my-new-project",
+  "stylelint.configBasedir": "D:\\Netwk-Pro\\git\\dev-svelte",
   "stylelint.configFile": "stylelint.config.js",
   "stylelint.customSyntax": "postcss-html",
   "stylelint.validate": ["css", "postcss", "html", "svelte"],
