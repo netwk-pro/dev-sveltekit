@@ -2,7 +2,7 @@
 	"name": "@networkpro/dev-sveltekit",
 	"private": false,
 	"sideEffects": false,
-	"version": "0.2.8",
+	"version": "0.2.9",
 	"type": "module",
 	"description": "Locking Down Networks, Unlocking Confidence | Security, Networking, Privacy — Network Pro Strategies",
 	"keywords": [
@@ -61,7 +61,7 @@
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
 		"@sveltejs/adapter-static": "^3.0.8",
-		"@sveltejs/kit": "^2.16.0",
+		"@sveltejs/kit": "^2.20.8",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/svelte": "^5.2.4",

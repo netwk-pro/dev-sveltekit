@@ -23,13 +23,15 @@ const config = {
       assets: "build", // Directory for static assets
       fallback: "index.html", // Fallback file for dynamic routes (SPA support for GitHub Pages)
       strict: false, // Allow dynamic routes without strict prerendering
+      precompress: false, // Disable precompression (optional; can enable if hosting supports it)
     }),
     // Paths configuration for deployment
     paths: {
       base: "", // Use root domain for deployment (update if deploying to a subdirectory)
     },
     prerender: {
-      entries: [], // Disable automatic prerendering to rely on SPA fallback
+      default: true, // Enable prerendering by default for static pages
+      entries: [], // Keep entries empty to rely on SPA fallback for dynamic routes
     },
   },
 
