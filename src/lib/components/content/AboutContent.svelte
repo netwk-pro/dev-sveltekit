@@ -1,10 +1,4 @@
 <script>
-  import { base } from "$app/paths";
-
-  // Log the base path to verify its value
-  console.log("Base path:", base);
-
-  const aboutLink = `${base}/docs/`;
   const rel = "noopener noreferrer";
   const decoding = "async";
   const loading = "lazy";
@@ -20,7 +14,7 @@
     },
     {
       label: "Markdown",
-      href: aboutLink,
+      href: "https://dev.netwk.pro/docs/about/",
       target: "_self",
     },
   ];

@@ -5,7 +5,7 @@
   console.log("Base path:", base);
 
   const aboutLink = `${base}/about/`;
-  const blogLink = `${base}/docs/blog/`;
+  const blogLink = "https://dev.netwk.pro/docs/blog/";
 
   /**
    * Navigation link object.

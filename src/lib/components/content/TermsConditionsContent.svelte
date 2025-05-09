@@ -5,7 +5,7 @@
   console.log("Base path:", base);
 
   const termsLink = `${base}/terms-of-use/`;
-  const tandcLink = `${base}/docs/terms-conditions/`;
+  const tandcLink = "https://dev.netwk.pro/docs/terms-conditions/";
 
   const constants = {
     company: "Network Pro Strategies",

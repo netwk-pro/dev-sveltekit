@@ -5,7 +5,7 @@ SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
 This file is part of Network Pro.
 ========================================================================= */
 
-import adapter from "@sveltejs/adapter-static"; // Static adapter for deployment
+import adapter from "@sveltejs/adapter-netlify"; // Netlify adapter for deployment
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte"; // Vite preprocessor for Svelte
 import { mdsvex } from "mdsvex"; // mdsvex for Markdown support
 
@@ -17,26 +17,39 @@ const config = {
   ],
 
   kit: {
-    // Static adapter configuration
+    // Netlify adapter configuration
     adapter: adapter({
-      pages: "build", // Directory for generated static files
-      assets: "build", // Directory for static assets
-      fallback: "index.html", // Fallback file for dynamic routes (SPA support for GitHub Pages)
-      strict: false, // Allow dynamic routes without strict prerendering
-      precompress: false, // Disable precompression (optional; can enable if hosting supports it)
+      edge: false, // Disable edge functions (optional, enable if needed)
+      split: false, // Disable splitting function files (optional, enable if needed)
     }),
     // Paths configuration for deployment
     paths: {
-      // Use '' in dev mode, and process.env.BASE_PATH in production
-      base: process.argv.includes("dev") ? "" : process.env.BASE_PATH,
+      base: "", // Use '' in dev mode, and process.env.BASE_PATH in production
     },
-    //alias: {
-    // this will match a directory and its contents
-    // (`my-directory/x` resolves to `path/to/my-directory/x`)
-    // $base: "$app/paths",
-    // },
-  },
+    prerender: {
+      entries: [
+        "/", // Home page
+        "/about", // About page
+        "/license", // License page
+        "/privacy-policy", // Privacy policy page
+        "/terms-of-use", // Terms of use page
+        "/terms-conditions", // Terms and conditions page
+      ],
+      // Handle HTTP errors during prerendering
+      handleHttpError: ({ path, _referrer, message }) => {
+        // Paths to ignore and warn about
+        const warnList = ["/...404"];
 
+        if (warnList.includes(path)) {
+          console.warn(`Prerender error at path: ${path}, message: ${message}`);
+          return;
+        }
+
+        // Otherwise, fail the build
+        throw new Error(message);
+      },
+    },
+  },
   // File extensions for Svelte and mdsvex
   extensions: [".svelte", ".svx", ".md"], // Added .md for Markdown support
 };

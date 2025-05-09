@@ -56,6 +56,7 @@ export default [
       ...js.configs.recommended.rules, // ESLint's core recommended rules (scoped)
       ...eslintConfigPrettier.rules, // Prettier config to disable conflicting ESLint rules (scoped)
       ...ESLINT_RULES, // Additional custom rules
+      "no-unused-vars": ["error", { argsIgnorePattern: "^_" }], // Ignore unused variables starting with an underscore
     },
   },
 

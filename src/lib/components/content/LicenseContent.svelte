@@ -1,11 +1,5 @@
 <script>
-  import { onMount } from "svelte";
-  import { base } from "$app/paths";
-
-  // Log the base path to verify its value
-  console.log("Base path:", base);
-
-  const legalLink = `${base}/docs/legal/`;
+  const legalLink = "https://dev.netwk.pro/docs/legal/";
 
   /**
    * Table of Contents Links

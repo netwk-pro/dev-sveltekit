@@ -1,11 +1,6 @@
 <script>
-  import { base } from "$app/paths";
-
-  // Log the base path to verify its value
-  console.log("Base path:", base);
-
-  const spotlightLink = `${base}/html/spotlight.html`;
-  const blogLink = `${base}/docs/blog/`;
+  const spotlightLink = "https://dev.netwk.pro/html/spotlight.html";
+  const blogLink = "https://dev.netwk.pro/docs/blog";
 
   /**
    * CSS class for the index headings.

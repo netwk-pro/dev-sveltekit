@@ -3,7 +3,6 @@
 
   // Log the base path to verify its value
   console.log("Base path:", base);
-
   const ccbyLink = `${base}/license/#cc-by`;
   const gnugplLink = `${base}/license/#gnu-gpl`;
   const trademarkLink = `${base}/license/#trademark`;

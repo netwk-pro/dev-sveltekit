@@ -1,21 +1,14 @@
 <script>
-  import { base } from "$app/paths";
-
-  // Log the base path to verify its value
-  console.log("Base path:", base);
-
   import Badges from "$lib/components/Badges.svelte";
   import FullWidthSection from "$lib/components/FullWidthSection.svelte";
   import LicenseContent from "$lib/components/content/LicenseContent.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
 
-  const licenseLink = `${base}/license/`;
   const hrStyle = "hr-styled";
 </script>
 
 <link rel="canonical" href="https://dev.netwk.pro/license/" />
-<base href={licenseLink} target="_self" />
 
 <section id="license">
   <FullWidthSection>

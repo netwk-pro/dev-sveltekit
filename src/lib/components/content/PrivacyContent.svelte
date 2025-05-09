@@ -1,15 +1,7 @@
 <script>
-  import { base } from "$app/paths";
-
-  // Log the base path to verify its value
-  console.log("Base path:", base);
-
-  import Badges from "$lib/components/Badges.svelte";
-  import LegalNav from "$lib/components/LegalNav.svelte";
-  import SocialMedia from "$lib/components/SocialMedia.svelte";
   import { onMount } from "svelte";
 
-  const privacyLink = `${base}/docs/privacy/`;
+  const privacyLink = "https://dev.netwk.pro/docs/privacy/";
 
   /**
    * Table of Contents Links
