@@ -47,7 +47,7 @@ jobs:
       - name: Download Build Artifact
         uses: actions/download-artifact@v4.3.0
         with:
-          name: github-pages
+          name: site-build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
