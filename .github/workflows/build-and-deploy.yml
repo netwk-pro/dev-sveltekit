@@ -77,6 +77,9 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: [check-codeql, build]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-24.04
 
     steps:
@@ -86,7 +89,7 @@ jobs:
           name: site-build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: actions/deploy-pages@v4.0.5
+        id: deployment
         with:
-          github_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./build
+          artifact_name: site-build
