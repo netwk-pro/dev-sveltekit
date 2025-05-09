@@ -10,6 +10,12 @@ permissions:
   pages: write # Required for deployment to GitHub Pages
   id-token: write # Required for OIDC authentication
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   check-codeql:
     name: Check CodeQL Analysis
@@ -65,27 +71,31 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
-          name: site-build
-          path: build # Replace this with the actual build output directory of your SvelteKit project
+          name: github-pages
+          path: build/
 
   deploy:
     name: Deploy to GitHub Pages
     needs: [check-codeql, build]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-24.04
 
     steps:
-      - name: Set up Git user
-        run: |
-          git config --global user.email "github@sl.neteng.cc"
-          git config --global user.name "SunDevil311"
+      - name: Checkout Repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Download Build Artifact
         uses: actions/download-artifact@v4.3.0
         with:
-          name: site-build
+          name: github-pages
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4.0.0
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./build # Replace this with the actual build output directory
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
