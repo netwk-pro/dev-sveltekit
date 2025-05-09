@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://netwk.pro/" />
 <base href="./" target="_self" />
 
-<section id="home-page">
+<section id="home-page" data-testid="home-page">
   <FullWidthSection>
     <!-- BEGIN TITLE -->
     <section id="site-title">
