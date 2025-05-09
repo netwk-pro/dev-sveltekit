@@ -73,8 +73,13 @@ jobs:
       - name: Build Site
         run: npm run build
 
+      - name: Verify Build Directory
+        run: |
+          echo "Checking for symlinks or hard links in the build directory..."
+          find build -type l && exit 1 || echo "No symlinks found."
+
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
           name: site-build
-          path: build
+          path: build/

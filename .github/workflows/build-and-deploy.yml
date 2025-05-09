@@ -1,3 +1,8 @@
+# .github/workflows/build-and-deploy.yml
+#
+# SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+# This file is part of Network Pro
+
 name: Build and Deploy to GitHub Pages
 
 on:
@@ -68,28 +73,42 @@ jobs:
       - name: Build Site
         run: npm run build
 
+      - name: Verify Build Directory
+        run: |
+          echo "Checking for symlinks or hard links in the build directory..."
+          find build -type l && exit 1 || echo "No symlinks found."
+
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4.6.2
         with:
           name: site-build
-          path: build
+          path: build/
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: [check-codeql, build]
+    needs: build
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-24.04
 
     steps:
+      - name: Set up Git user
+        run: |
+          git config --global user.email "github@sl.neteng.cc"
+          git config --global user.name "SunDevil311"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
       - name: Download Build Artifact
         uses: actions/download-artifact@v4.3.0
         with:
           name: site-build
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4.0.5
-        id: deployment
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          artifact_name: site-build
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./
