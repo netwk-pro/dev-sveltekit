@@ -21,11 +21,15 @@ const config = {
     adapter: adapter({
       pages: "build", // Directory for generated static files
       assets: "build", // Directory for static assets
-      fallback: null, // No fallback file (update to "index.html" if SPA fallback is needed)
+      fallback: "index.html", // Fallback file for dynamic routes (SPA support for GitHub Pages)
+      strict: false, // Allow dynamic routes without strict prerendering
     }),
     // Paths configuration for deployment
     paths: {
       base: "", // Use root domain for deployment (update if deploying to a subdirectory)
+    },
+    prerender: {
+      entries: [], // Disable automatic prerendering to rely on SPA fallback
     },
   },
 
