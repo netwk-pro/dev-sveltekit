@@ -1,6 +1,6 @@
 <script>
-  const spotlightLink = "https://dev.netwk.pro/html/spotlight.html";
-  const blogLink = "https://dev.netwk.pro/docs/blog";
+  const spotlightLink = "https://netwk.pro/html/spotlight.html";
+  const blogLink = "https://netwk.pro/docs/blog";
 
   /**
    * CSS class for the index headings.

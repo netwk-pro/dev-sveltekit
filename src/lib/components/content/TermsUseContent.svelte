@@ -8,7 +8,7 @@
   const tandcLink = `${base}/terms-conditions`;
   const privacyLink = `${base}/privacy-policy`;
   const licenseLink = `${base}/license`;
-  const termsLink = "https://dev.netwk.pro/docs/terms-use";
+  const termsLink = "https://netwk.pro/docs/terms-use";
 
   /**
    * Table of Contents Links
