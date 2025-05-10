@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  const privacyLink = "https://dev.netwk.pro/docs/privacy";
+  const privacyLink = "https://netwk.pro/docs/privacy";
 
   /**
    * Table of Contents Links
@@ -135,7 +135,7 @@
         <strong>
           <a
             rel={constants.rel}
-            href="https://www.azleg.gov/arstitle/"
+            href="https://www.azleg.gov/arstitle"
             target={constants.targetBlank}>
             Arizona Revised Statutes
           </a>

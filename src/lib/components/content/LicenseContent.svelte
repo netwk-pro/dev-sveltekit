@@ -104,7 +104,7 @@
       <strong>Formats Available:</strong> &nbsp;<span class="visited"
         >HTML</span>
       |
-      <a href="https://dev.network.pro/docs/legal" target={constants.targetSelf}
+      <a href="https://network.pro/docs/legal" target={constants.targetSelf}
         >Markdown</a>
     </sup>
   </p>
@@ -358,7 +358,7 @@
         with this material. If not, see &lt;
         <a
           rel={constants.rel}
-          href="https://www.gnu.org/licenses/"
+          href="https://www.gnu.org/licenses"
           target={constants.targetBlank}>https://www.gnu.org/licenses/</a
         >&gt;.
       </p>
