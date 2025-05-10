@@ -14,7 +14,7 @@
     },
     {
       label: "Markdown",
-      href: "https://dev.netwk.pro/docs/about",
+      href: "https://netwk.pro/docs/about",
       target: "_self",
     },
   ];

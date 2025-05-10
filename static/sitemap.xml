@@ -10,9 +10,9 @@ This file is part of Network Pro
 
   <url>
 
-    <loc>https://dev.netwk.pro/</loc>
+    <loc>https://dev.netwk.pro</loc>
 
-    <lastmod>2025-04-18</lastmod>
+    <lastmod>2025-05-08</lastmod>
 
     <changefreq>weekly</changefreq>
 
@@ -24,9 +24,9 @@ This file is part of Network Pro
 
     <loc>https://dev.netwk.pro/privacy-policy</loc>
 
-    <lastmod>2025-04-18</lastmod>
+    <lastmod>2025-05-08</lastmod>
 
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
 
     <priority>0.8</priority>
 
@@ -36,19 +36,7 @@ This file is part of Network Pro
 
     <loc>https://dev.netwk.pro/license</loc>
 
-    <lastmod>2025-04-18</lastmod>
-
-    <changefreq>weekly</changefreq>
-
-    <priority>0.7</priority>
-
-  </url>
-
-  <url>
-
-    <loc>https://dev.netwk.pro/terms-conditions</loc>
-
-    <lastmod>2025-04-18</lastmod>
+    <lastmod>2025-05-08</lastmod>
 
     <changefreq>monthly</changefreq>
 
@@ -60,11 +48,23 @@ This file is part of Network Pro
 
     <loc>https://dev.netwk.pro/terms-of-use</loc>
 
-    <lastmod>2025-04-18</lastmod>
+    <lastmod>2025-05-08</lastmod>
 
     <changefreq>monthly</changefreq>
 
     <priority>0.7</priority>
+
+  </url>
+
+  <url>
+
+    <loc>https://dev.netwk.pro/terms-conditions</loc>
+
+    <lastmod>2025-05-08</lastmod>
+
+    <changefreq>monthly</changefreq>
+
+    <priority>0.6</priority>
 
   </url>
 
