@@ -4,8 +4,8 @@
   // Log the base path to verify its value
   console.log("Base path:", base);
 
-  const aboutLink = `${base}/about/`;
-  const blogLink = "https://dev.netwk.pro/docs/blog/";
+  const aboutLink = `${base}/about`;
+  const blogLink = "https://dev.netwk.pro/docs/blog";
 
   /**
    * Navigation link object.

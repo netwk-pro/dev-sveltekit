@@ -33,7 +33,7 @@ indent_size = 2
 indent_size = 2
 
 ; JavaScript files -
-[*.{js,ts}]
+[*.{mjs,js,ts}]
 curly_bracket_next_line = true
 quote_type = single
 

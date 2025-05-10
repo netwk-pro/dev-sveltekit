@@ -6,7 +6,7 @@
 
   export let data;
 
-  // Normalize the pathname to handle trailing slashes
+  // Normalize the pathname to remove trailing slashes
   const normalizedPathname = data?.pathname?.replace(/\/+$/, "") || "/";
 </script>
 

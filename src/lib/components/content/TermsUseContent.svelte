@@ -5,10 +5,10 @@
   // Log the base path to verify its value
   console.log("Base path:", base);
 
-  const tandcLink = `${base}/terms-conditions/`;
-  const privacyLink = `${base}/privacy-policy/`;
-  const licenseLink = `${base}/license/`;
-  const termsLink = "https://dev.netwk.pro/docs/terms-use/";
+  const tandcLink = `${base}/terms-conditions`;
+  const privacyLink = `${base}/privacy-policy`;
+  const licenseLink = `${base}/license`;
+  const termsLink = "https://dev.netwk.pro/docs/terms-use";
 
   /**
    * Table of Contents Links
@@ -72,7 +72,7 @@
   <span class={constants.classSmall}>
     <a
       rel={constants.rel}
-      href="https://spdx.dev/learn/handling-license-info/"
+      href="https://spdx.dev/learn/handling-license-info"
       target={constants.targetBlank}>
       SPDX License Identifier
     </a>

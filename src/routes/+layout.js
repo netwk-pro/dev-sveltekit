@@ -1,5 +1,5 @@
 //export const prerender = true;
-//export const trailingSlash = "always";
+export const trailingSlash = "never";
 
 export function load({ url }) {
   // Define metadata for specific routes
@@ -43,13 +43,15 @@ export function load({ url }) {
       "Locking Down Networks, Unlocking Confidence™ | Security, Networking, Privacy — Network Pro™",
   };
 
-  // Determine the metadata for the current route
-  // @ts-ignore
-  const currentMeta = meta[url.pathname] || defaultMeta;
+  // Normalize the pathname to remove trailing slashes
+  const normalizedPathname = url.pathname.replace(/\/+$/, "") || "/";
+
+  // @ts-ignore: TypeScript doesn't recognize this indexing, but it's safe in this context
+  const currentMeta = meta[normalizedPathname] || defaultMeta;
 
   // Return the metadata and pathname to the layout
   return {
-    pathname: url.pathname,
+    pathname: normalizedPathname,
     meta: currentMeta,
   };
 }

@@ -13,7 +13,7 @@
   const hrStyle = "hr-styled";
 </script>
 
-<link rel="canonical" href="https://dev.netwk.pro/" />
+<link rel="canonical" href="https://dev.netwk.pro" />
 
 <section id="home-page" data-testid="home-page">
   <FullWidthSection>

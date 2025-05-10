@@ -5,7 +5,7 @@
   console.log("Base path:", base);
 
   const termsLink = `${base}/terms-of-use/`;
-  const tandcLink = "https://dev.netwk.pro/docs/terms-conditions/";
+  const tandcLink = "https://dev.netwk.pro/docs/terms-conditions";
 
   const constants = {
     company: "Network Pro Strategies",
@@ -35,7 +35,7 @@
 <!-- BEGIN TITLE -->
 <section id="top">
   <span class={constants.classSmall}>
-    <a rel={constants.rel} href="https://spdx.dev/learn/handling-license-info/">
+    <a rel={constants.rel} href="https://spdx.dev/learn/handling-license-info">
       SPDX License Identifier
     </a>: &nbsp;<code>CC-BY-4.0 OR GPL-3.0-or-later</code>
   </span>

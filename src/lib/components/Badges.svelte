@@ -4,8 +4,8 @@
   // Log the base path to verify its value
   console.log("Base path:", base);
 
-  const ccbyLink = `${base}/license/#cc-by`;
-  const gplLink = `${base}/license/#gnu-gpl`;
+  const ccbyLink = `${base}/license#cc-by`;
+  const gplLink = `${base}/license#gnu-gpl`;
 
   /**
    * Badge link object.

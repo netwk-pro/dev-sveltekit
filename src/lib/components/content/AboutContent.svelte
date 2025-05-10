@@ -8,13 +8,13 @@
   const navLinks = [
     {
       label: "SPDX License Identifier",
-      href: "https://spdx.dev/learn/handling-license-info/",
+      href: "https://spdx.dev/learn/handling-license-info",
       target: "_blank",
       text: "CC-BY-4.0 OR GPL-3.0-or-later",
     },
     {
       label: "Markdown",
-      href: "https://dev.netwk.pro/docs/about/",
+      href: "https://dev.netwk.pro/docs/about",
       target: "_self",
     },
   ];

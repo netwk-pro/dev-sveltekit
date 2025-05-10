@@ -27,14 +27,14 @@ const config = {
       base: "", // Use '' in dev mode, and process.env.BASE_PATH in production
     },
     prerender: {
-      entries: [
-        "/", // Home page
-        "/about", // About page
-        "/license", // License page
-        "/privacy-policy", // Privacy policy page
-        "/terms-of-use", // Terms of use page
-        "/terms-conditions", // Terms and conditions page
-      ],
+      //entries: [
+      //"/", // Home page
+      //"/about", // About page
+      //"/license", // License page
+      //"/privacy-policy", // Privacy policy page
+      //"/terms-of-use", // Terms of use page
+      //"/terms-conditions", // Terms and conditions page
+      //],
       // Handle HTTP errors during prerendering
       handleHttpError: ({ path, _referrer, message }) => {
         // Paths to ignore and warn about

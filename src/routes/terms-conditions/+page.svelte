@@ -8,7 +8,7 @@
   const hrStyle = "hr-styled";
 </script>
 
-<link rel="canonical" href="https://dev.netwk.pro/terms-conditions/" />
+<link rel="canonical" href="https://dev.netwk.pro/terms-conditions" />
 
 <section id="terms-conditions">
   <FullWidthSection>

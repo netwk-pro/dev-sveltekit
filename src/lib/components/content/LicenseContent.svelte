@@ -1,5 +1,5 @@
 <script>
-  const legalLink = "https://dev.netwk.pro/docs/legal/";
+  import { onMount } from "svelte";
 
   /**
    * Table of Contents Links
@@ -66,7 +66,7 @@
   <span class={constants.classSmall}>
     <a
       rel={constants.rel}
-      href="https://spdx.dev/learn/handling-license-info/"
+      href="https://spdx.dev/learn/handling-license-info"
       target={constants.targetBlank}>
       SPDX License Identifier
     </a>
@@ -104,7 +104,8 @@
       <strong>Formats Available:</strong> &nbsp;<span class="visited"
         >HTML</span>
       |
-      <a href={legalLink} target={constants.targetSelf}>Markdown</a>
+      <a href="https://dev.network.pro/docs/legal" target={constants.targetSelf}
+        >Markdown</a>
     </sup>
   </p>
 </section>

@@ -15,8 +15,8 @@
 name: Build Site
 
 on:
-  release:
-    types: [created]
+  #release:
+  #types: [created]
   workflow_dispatch:
 
 jobs:
@@ -80,7 +80,6 @@ jobs:
         run: npm install
 
       - name: Build project
-        id: build
         env:
           BASE_PATH: "/${{ github.event.repository.name }}"
         run: |

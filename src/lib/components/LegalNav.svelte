@@ -4,9 +4,9 @@
   // Log the base path to verify its value
   console.log("Base path:", base);
 
-  const termsLink = `${base}/terms-of-use/`;
-  const privacyLink = `${base}/privacy-policy/`;
-  const licenseLink = `${base}/license/`;
+  const termsLink = `${base}/terms-of-use`;
+  const privacyLink = `${base}/privacy-policy`;
+  const licenseLink = `${base}/license`;
 
   /**
    * Navigation link object.

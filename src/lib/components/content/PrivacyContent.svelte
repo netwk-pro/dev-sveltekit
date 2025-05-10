@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
-  const privacyLink = "https://dev.netwk.pro/docs/privacy/";
+  const privacyLink = "https://dev.netwk.pro/docs/privacy";
 
   /**
    * Table of Contents Links
@@ -75,7 +75,7 @@
   <span class={constants.classSmall}>
     <a
       rel={constants.rel}
-      href="https://spdx.dev/learn/handling-license-info/"
+      href="https://spdx.dev/learn/handling-license-info"
       target={constants.targetBlank}>
       SPDX License Identifier
     </a>

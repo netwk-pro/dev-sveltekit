@@ -3,9 +3,10 @@
 
   // Log the base path to verify its value
   console.log("Base path:", base);
-  const ccbyLink = `${base}/license/#cc-by`;
-  const gnugplLink = `${base}/license/#gnu-gpl`;
-  const trademarkLink = `${base}/license/#trademark`;
+
+  const ccbyLink = `${base}/license#cc-by`;
+  const gnugplLink = `${base}/license#gnu-gpl`;
+  const trademarkLink = `${base}/license#trademark`;
 
   /**
    * Creator details object.
@@ -38,7 +39,7 @@
    */
   const creator = {
     name: "Network Pro Strategies",
-    url: "https://netwk.pro/",
+    url: "https://netwk.pro",
     trademark: "Network Pro™",
     slogan: "Locking Down Networks™",
   };
