@@ -24,7 +24,7 @@ const config = {
     }),
     // Paths configuration for deployment
     paths: {
-      base: "", // Use '' in dev mode, and process.env.BASE_PATH in production
+      base: "", // Base path is always the root
     },
     prerender: {
       // Handle HTTP errors during prerendering

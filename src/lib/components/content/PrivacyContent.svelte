@@ -1,6 +1,5 @@
 <script>
-  import { onMount } from "svelte";
-
+  // Constants for attributes and reusable text
   const privacyLink = "https://netwk.pro/docs/privacy";
 
   /**
@@ -32,7 +31,6 @@
     effectiveDate: "May 8, 2025",
   };
 
-  // Constants for attributes and reusable text
   const constants = {
     classSmall: "small-text",
     rel: "noopener noreferrer",
@@ -41,33 +39,6 @@
     targetSelf: "_self",
     targetBlank: "_blank",
   };
-
-  /**
-   * Scrolls smoothly to the target element when an anchor link is clicked
-   * @param {Event} event
-   */
-  const handleAnchorClick = (event) => {
-    const target = event.target;
-
-    // Check if target is a valid HTMLElement
-    if (target instanceof HTMLElement) {
-      const anchor = target.closest("a");
-      if (anchor && anchor.hash) {
-        const element = document.querySelector(anchor.hash);
-        if (element) {
-          event.preventDefault();
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    }
-  };
-
-  onMount(() => {
-    document.addEventListener("click", handleAnchorClick);
-    return () => {
-      document.removeEventListener("click", handleAnchorClick);
-    };
-  });
 </script>
 
 <!-- BEGIN TITLE -->

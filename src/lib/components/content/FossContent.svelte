@@ -28,7 +28,7 @@
 &nbsp;
 
 <nav id="toc">
-  <h2>Table of Contents</h2>
+  <h3>Table of Contents</h3>
   <ul>
     {#each fossData as { id, title }}
       <li><a href={"#" + id}>{title}</a></li>

@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from "svelte";
   import { base } from "$app/paths";
 
   // Log the base path to verify its value
@@ -40,31 +39,6 @@
     targetBlank: "_blank",
     targetSelf: "_self",
   };
-
-  /**
-   * Handles smooth scrolling to anchor links.
-   * @param {Event} event
-   */
-  const handleAnchorClick = (event) => {
-    const target = event.target;
-    if (target instanceof HTMLElement) {
-      const anchor = target.closest("a");
-      if (anchor && anchor.hash) {
-        const element = document.querySelector(anchor.hash);
-        if (element) {
-          event.preventDefault();
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    }
-  };
-
-  onMount(() => {
-    document.addEventListener("click", handleAnchorClick);
-    return () => {
-      document.removeEventListener("click", handleAnchorClick);
-    };
-  });
 </script>
 
 <!-- BEGIN TITLE -->
