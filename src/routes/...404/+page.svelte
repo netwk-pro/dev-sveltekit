@@ -1,8 +1,12 @@
 <script>
   const centerText = "center-text";
 
+  /** @type {{ pathname: string } | undefined} */
   export let url;
+
+  // Use a fallback pathname if `url` is undefined
+  const pathname = url?.pathname ?? "/";
 </script>
 
 <h1 class={centerText}>404 - Page Not Found</h1>
-<p class={centerText}>The page "{url.pathname}" does not exist.</p>
+<p class={centerText}>The page "{pathname}" does not exist.</p>
