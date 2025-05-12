@@ -6,7 +6,7 @@
 
   const homeLink = base || "/";
   const aboutLink = `${base}/about`;
-  const blogLink = "https://netwk.pro/docs/blog";
+  const blogLink = "https://blog.netwk.pro";
 
   /**
    * Navigation link object.
@@ -58,7 +58,9 @@
     </a>
     {#if external}
       <sup>
-        <span class="fas fa-arrow-up-right-from-square fa-2xs"></span>
+        <span style="color: #ffc627;">
+          <i class="fas fa-arrow-up-right-from-square fa-2xs"></i>
+        </span>
       </sup>
     {/if}
     <!-- Separator logic -->

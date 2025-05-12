@@ -9,5 +9,4 @@ User-agent: *
 Disallow: *.jsonc$
 Disallow: *.json$
 Disallow: *.mjs$
-Disallow: *.cjs
 Disallow: *.js$

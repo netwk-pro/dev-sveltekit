@@ -34,6 +34,11 @@ export function load({ url }) {
       description:
         "Terms and Conditions | Security, Networking, Privacy — Network Pro™",
     },
+    "/foss-spotlight": {
+      title: "FOSS Spotlight — Network Pro™",
+      description:
+        "FOSS Spotlight | Security, Networking, Privacy — Network Pro™",
+    },
   };
 
   // Fallback metadata for undefined routes

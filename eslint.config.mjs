@@ -7,6 +7,7 @@ This file is part of Network Pro.
 
 import js from "@eslint/js"; // Provides ESLint core rules and recommended config
 import eslintConfigPrettier from "eslint-config-prettier"; // Prettier config to disable conflicting ESLint rules
+import jsdocPlugin from "eslint-plugin-jsdoc"; // JSDoc plugin
 import sveltePlugin from "eslint-plugin-svelte"; // Svelte plugin
 import globals from "globals";
 import svelteParser from "svelte-eslint-parser"; // Svelte parser
@@ -52,11 +53,21 @@ export default [
       ecmaVersion: "latest",
       sourceType: "module",
     },
+    plugins: {
+      jsdoc: jsdocPlugin, // Include JSDoc plugin
+    },
     rules: {
       ...js.configs.recommended.rules, // ESLint's core recommended rules (scoped)
       ...eslintConfigPrettier.rules, // Prettier config to disable conflicting ESLint rules (scoped)
       ...ESLINT_RULES, // Additional custom rules
       "no-unused-vars": ["error", { argsIgnorePattern: "^_" }], // Ignore unused variables starting with an underscore
+      "jsdoc/check-alignment": "warn", // Ensure JSDoc block tags are aligned
+      "jsdoc/check-param-names": "warn", // Checks parameter names in JSDoc
+      "jsdoc/check-tag-names": "warn", // Checks if tags in JSDoc are valid
+      "jsdoc/check-types": "warn", // Checks if types in JSDoc are defined correctly
+      "jsdoc/require-param": "warn", // Requires @param in JSDoc
+      "jsdoc/require-returns": "warn", // Requires @returns in JSDoc
+      "svelte/no-at-html-tags": "warn", // Warn on use of @html (security risk)
     },
   },
 

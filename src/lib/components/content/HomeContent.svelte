@@ -1,6 +1,11 @@
 <script>
-  const spotlightLink = "https://netwk.pro/html/spotlight.html";
-  const blogLink = "https://netwk.pro/docs/blog";
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  const spotlightLink = `${base}/foss-spotlight`;
+  const blogLink = "https://blog.netwk.pro";
 
   /**
    * CSS class for the index headings.
