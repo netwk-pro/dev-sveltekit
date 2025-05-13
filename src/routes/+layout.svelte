@@ -4,6 +4,9 @@
   import HeaderDefault from "$lib/components/layout/HeaderDefault.svelte";
   import HeaderHome from "$lib/components/layout/HeaderHome.svelte";
 
+  // Import global styles
+  import "$lib/styles/global.css";
+
   export let data;
 
   // Normalize the pathname to remove trailing slashes

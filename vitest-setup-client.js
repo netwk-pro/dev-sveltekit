@@ -6,6 +6,8 @@ This file is part of Network Pro.
 ========================================================================= */
 
 import "@testing-library/jest-dom/vitest";
+import { cleanup } from "@testing-library/svelte";
+import "jsdom/register"; // Ensure jsdom/register is set up
 import { vi } from "vitest";
 
 // required for svelte5 + jsdom as jsdom does not support matchMedia
@@ -22,4 +24,9 @@ Object.defineProperty(window, "matchMedia", {
   })),
 });
 
-// add more mocks here if you need them
+// Automatically clean up the DOM after each test
+afterEach(() => {
+  cleanup();
+});
+
+// Add more mocks here if needed

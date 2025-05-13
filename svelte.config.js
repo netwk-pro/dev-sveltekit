@@ -8,19 +8,23 @@ This file is part of Network Pro.
 import adapter from "@sveltejs/adapter-netlify"; // Netlify adapter for deployment
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte"; // Vite preprocessor for Svelte
 import { mdsvex } from "mdsvex"; // mdsvex for Markdown support
+import preprocess from "svelte-preprocess"; // svelte-preprocess for additional preprocessing features
 
 const config = {
-  // Preprocessors for enhanced functionality (vitePreprocess + mdsvex for Markdown support)
+  // Preprocessors for enhanced functionality (vitePreprocess + mdsvex for Markdown support + svelte-preprocess for PostCSS)
   preprocess: [
     vitePreprocess(), // Simplified (TypeScript is natively supported)
     mdsvex({ extensions: [".svx", ".md"] }), // Configure mdsvex with .svx and .md extensions
+    preprocess({
+      postcss: true, // Enable PostCSS support
+    }),
   ],
 
   kit: {
     // Netlify adapter configuration
     adapter: adapter({
       edge: false, // Disable edge functions (optional, enable if needed)
-      split: false, // Disable splitting function files (optional, enable if needed)
+      split: false, // Disable splitting function files (optional, enable if needed),
     }),
     // Paths configuration for deployment
     paths: {
@@ -48,5 +52,6 @@ const config = {
 
 export default config;
 
+// PostCSS configuration is handled separately in postcss.config.cjs
 // Consult https://svelte.dev/docs#compile-time-svelte-preprocess
 // for more information about preprocessors

@@ -12,6 +12,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [sveltekit()],
   test: {
+    // Define test configurations for both client and server
     workspace: [
       {
         extends: "./vite.config.js",
@@ -23,6 +24,12 @@ export default defineConfig({
           include: ["src/**/*.svelte.{test,spec}.{js,mjs}"],
           exclude: ["src/lib/server/**"],
           setupFiles: ["./vitest-setup-client.js"],
+          // Enable HTML coverage report for client tests
+          coverage: {
+            provider: "v8", // Use @vitest/coverage-v8 for coverage
+            reporter: ["html"], // HTML format only
+            reportsDirectory: "./coverage/client", // Directory for client coverage reports
+          },
         },
       },
       {
@@ -32,8 +39,20 @@ export default defineConfig({
           environment: "node",
           include: ["src/**/*.{test,spec}.{js,mjs}"],
           exclude: ["src/**/*.svelte.{test,spec}.{js,mjs}"],
+          // Enable HTML coverage report for server tests
+          coverage: {
+            provider: "v8", // Use @vitest/coverage-v8 for coverage
+            reporter: ["html"], // HTML format only
+            reportsDirectory: "./coverage/server", // Directory for server coverage reports
+          },
         },
       },
     ],
+    // Enable the Vitest UI
+    // @ts-ignore
+    ui: {
+      enabled: true, // Allows running `vitest --ui` to start the Vitest UI
+      base: "/vitest-ui", // Optional: Customize the base path for the UI
+    },
   },
 });
