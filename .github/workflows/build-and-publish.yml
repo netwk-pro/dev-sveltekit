@@ -25,9 +25,11 @@ jobs:
   check-codeql:
     name: Check CodeQL Analysis
     runs-on: ubuntu-24.04
+    # Continue workflow even if this job fails due to inability to find and/or check CodeQL workflow
+    continue-on-error: true
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Set up GitHub CLI
         run: sudo apt-get install gh
@@ -52,17 +54,17 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4.4.0
+        uses: actions/setup-node@v4
         with:
           node-version: lts/*
           check-latest: true
           cache: npm
 
       - name: Cache Node.js modules
-        uses: actions/cache@v4.2.3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-lts-${{ hashFiles('package-lock.json', 'package.json', '.npmrc') }}
@@ -81,7 +83,7 @@ jobs:
         run: cp package.json README.md build/
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: build/
@@ -91,16 +93,16 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-artifacts
           path: build/
 
       - name: Set up Node.js for npmjs
-        uses: actions/setup-node@v4.4.0
+        uses: actions/setup-node@v4
         with:
           node-version: lts/*
           check-latest: true
@@ -129,16 +131,16 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Download build artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: build-artifacts
           path: build/
 
       - name: Set up Node.js for GPR
-        uses: actions/setup-node@v4.4.0
+        uses: actions/setup-node@v4
         with:
           node-version: lts/*
           check-latest: true
