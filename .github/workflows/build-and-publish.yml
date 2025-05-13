@@ -34,7 +34,7 @@ jobs:
 
       - name: Authenticate GitHub CLI
         env:
-          GH_PAT: ${{ secrets.SUNDEV }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: echo "$GH_PAT" | gh auth login --with-token
 
       - name: Check CodeQL Workflow
