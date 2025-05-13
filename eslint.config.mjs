@@ -18,6 +18,7 @@ const GLOBALS = {
   self: "readonly",
   location: "readonly",
   indexedDB: "readonly",
+  ...globals.vitest, // Add Vitest globals for test functions like afterEach, describe, etc.
 };
 
 // Define general ESLint rules (non-Svelte-specific)
@@ -42,6 +43,7 @@ export default [
       "node_modules/", // Node.js dependencies
       ".vite/", // Vite-specific cache directory
       "*.lock", // Lock files
+      ".env*", // Environment files
     ],
   },
 
@@ -67,7 +69,6 @@ export default [
       "jsdoc/check-types": "warn", // Checks if types in JSDoc are defined correctly
       "jsdoc/require-param": "warn", // Requires @param in JSDoc
       "jsdoc/require-returns": "warn", // Requires @returns in JSDoc
-      "svelte/no-at-html-tags": "warn", // Warn on use of @html (security risk)
     },
   },
 
@@ -86,6 +87,20 @@ export default [
       ...sveltePlugin.configs.prettier.rules, // Prettier compatibility for Svelte
       "svelte/no-at-html-tags": "warn", // Warn on use of @html (security risk)
       "svelte/require-optimized-style-attribute": "warn", // Recommend optimized style attributes
+    },
+  },
+
+  // Vitest-specific configuration
+  {
+    files: ["**/*.test.js", "**/*.spec.js", "**/vitest-setup-client.js"], // Test-related files
+    languageOptions: {
+      globals: {
+        ...GLOBALS,
+        afterEach: "readonly", // Explicitly declare afterEach as a global
+      },
+    },
+    rules: {
+      "no-undef": "off", // Turn off no-undef for test globals
     },
   },
 ];

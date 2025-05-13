@@ -48,11 +48,5 @@ export default defineConfig({
         },
       },
     ],
-    // Enable the Vitest UI
-    // @ts-ignore
-    ui: {
-      enabled: true, // Allows running `vitest --ui` to start the Vitest UI
-      base: "/vitest-ui", // Optional: Customize the base path for the UI
-    },
   },
 });

@@ -7,13 +7,9 @@ This file is part of Network Pro.
 
 import autoprefixer from "autoprefixer";
 import cssnano from "cssnano";
-import dotenv from "dotenv"; // Import dotenv
 import postcssImport from "postcss-import";
 
-// Load the appropriate .env file based on NODE_ENV
-const env = process.env.NODE_ENV || "development"; // Default to 'development' if NODE_ENV is undefined
-dotenv.config({ path: `.env.${env}` });
-
+// Determine if we're in production mode
 const isProduction = process.env.NODE_ENV === "production";
 
 export default {

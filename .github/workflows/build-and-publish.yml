@@ -18,7 +18,7 @@ permissions:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: "build-and-publish"
   cancel-in-progress: true
 
 jobs:
@@ -68,7 +68,7 @@ jobs:
         uses: actions/cache@v4.2.3
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-lts-${{ hashFiles('package-lock.json', 'package.json') }}
+          key: ${{ runner.os }}-node-lts-${{ hashFiles('package-lock.json', 'package.json', '.npmrc') }}
           restore-keys: |
             ${{ runner.os }}-node-lts-build-
             ${{ runner.os }}-node-lts-
@@ -123,4 +123,4 @@ jobs:
             npm publish
           fi
         env:
-          NODE_AUTH_TOKEN: ${{ matrix.registry == 'npmjs' && secrets.NPM_NETPRO || secrets.SUNDEV }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_NETPRO }}

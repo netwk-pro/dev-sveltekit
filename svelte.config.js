@@ -28,7 +28,7 @@ const config = {
     }),
     // Paths configuration for deployment
     paths: {
-      base: "", // Base path is always the root
+      base: "", // Always deploy to the root of the domain
     },
     prerender: {
       // Handle HTTP errors during prerendering

@@ -5,10 +5,11 @@ SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
 This file is part of Network Pro.
 ========================================================================= */
 
+/* eslint-env vitest */
+
 import "@testing-library/jest-dom/vitest";
 import { cleanup } from "@testing-library/svelte";
-import "jsdom/register"; // Ensure jsdom/register is set up
-import { vi } from "vitest";
+import { afterEach, vi } from "vitest";
 
 // required for svelte5 + jsdom as jsdom does not support matchMedia
 Object.defineProperty(window, "matchMedia", {

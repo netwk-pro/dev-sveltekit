@@ -1,3 +1,10 @@
+<!-- ==========================================================================
++layout.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
   import ContainerSection from "$lib/components/layout/ContainerSection.svelte";
   import Footer from "$lib/components/layout/Footer.svelte";
@@ -9,8 +16,7 @@
 
   export let data;
 
-  // Normalize the pathname to remove trailing slashes
-  const normalizedPathname = data?.pathname?.replace(/\/+$/, "") || "/";
+  // Pathname normalization takes place in +layout.js
 </script>
 
 <!-- Update the document's metadata dynamically -->
@@ -24,7 +30,7 @@
 
 <header id="header-nav">
   <ContainerSection>
-    {#if normalizedPathname === "/"}
+    {#if data.pathname === "/"}
       <!-- Render the Home Header for the root route -->
       <HeaderHome />
     {:else}
@@ -34,8 +40,9 @@
   </ContainerSection>
 </header>
 
-<!-- Main Content -->
-<slot />
+<main>
+  <slot />
+</main>
 
 <footer id="licensing">
   <ContainerSection>
