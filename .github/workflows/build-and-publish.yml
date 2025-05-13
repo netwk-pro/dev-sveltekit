@@ -10,7 +10,7 @@ on:
     types: [created]
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN to allow deployment
 permissions:
   contents: read
   packages: write
@@ -25,7 +25,6 @@ jobs:
   check-codeql:
     name: Check CodeQL Analysis
     runs-on: ubuntu-24.04
-    continue-on-error: true
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
@@ -36,11 +35,9 @@ jobs:
       - name: Authenticate GitHub CLI
         env:
           GH_PAT: ${{ secrets.SUNDEV }}
-        run: echo "${{ secrets.GH_PAT }}" | gh auth login --with-token
+        run: echo "$GH_PAT" | gh auth login --with-token
 
       - name: Check CodeQL Workflow
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           gh run list --workflow "CodeQL" --json conclusion --jq '.[0].conclusion' > codeql_status.txt
           CODEQL_STATUS=$(cat codeql_status.txt)
@@ -83,26 +80,75 @@ jobs:
       - name: Copy package.json to build directory
         run: cp package.json README.md build/
 
-  publish:
-    needs: [check-codeql, build]
-    runs-on: ubuntu-24.04
-    strategy:
-      matrix:
-        registry: ["npmjs", "gpr"]
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: build/
 
+  publish-npmjs:
+    needs: build
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
 
-      - name: Login to registry
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+          path: build/
+
+      - name: Set up Node.js for npmjs
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: lts/*
+          check-latest: true
+          registry-url: https://registry.npmjs.org/
+          cache: npm
+
+      - name: Login to npmjs
         run: |
-          if [[ "${{ matrix.registry }}" == "npmjs" ]]; then
-            echo "@networkpro:registry=https://registry.npmjs.org/" > ~/.npmrc
-            echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_NETPRO }}" >> ~/.npmrc
-          else
-            echo "@netwk-pro:registry=https://npm.pkg.github.com/" > ~/.npmrc
-            echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
-          fi
+          echo "@networkpro:registry=https://registry.npmjs.org/" > ~/.npmrc
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_NETPRO }}" >> ~/.npmrc
+
+      - name: Set up Git user
+        run: |
+          git config --global user.email "github@sl.neteng.cc"
+          git config --global user.name "SunDevil311"
+
+      - name: Publish package to npmjs
+        working-directory: ./build
+        run: npm publish --access public
+
+      - name: Clean up .npmrc
+        run: rm -f ~/.npmrc
+
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+          path: build/
+
+      - name: Set up Node.js for GPR
+        uses: actions/setup-node@v4.4.0
+        with:
+          node-version: lts/*
+          check-latest: true
+          registry-url: https://npm.pkg.github.com/
+          cache: npm
+
+      - name: Login to GitHub Package Registry (GPR)
+        run: |
+          echo "@netwk-pro:registry=https://npm.pkg.github.com/" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
 
       - name: Set up Git user
         run: |
@@ -110,20 +156,12 @@ jobs:
           git config --global user.name "SunDevil311"
 
       - name: Update package name for GPR
-        if: matrix.registry == 'gpr'
         run: |
           sed -i 's/"name": ".*"/"name": "@netwk-pro\/web"/' build/package.json
 
-      - name: Publish package
-        working-directory: build/
-        run: |
-          if [[ "${{ matrix.registry }}" == "npmjs" ]]; then
-            npm publish --access public
-          else
-            npm publish
-          fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_NETPRO }}
+      - name: Publish package to GPR
+        working-directory: ./build
+        run: npm publish
 
       - name: Clean up .npmrc
         run: rm -f ~/.npmrc
