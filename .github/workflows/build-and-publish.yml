@@ -6,8 +6,8 @@
 name: Build and Publish to Registries
 
 on:
-  #release:
-  #types: [created]
+  release:
+    types: [created]
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -36,11 +36,11 @@ jobs:
       - name: Authenticate GitHub CLI
         env:
           GH_PAT: ${{ secrets.SUNDEV }}
-        run: echo "${{ secrets.SUNDEV }}" | gh auth login --with-token
+        run: echo "${{ secrets.GH_PAT }}" | gh auth login --with-token
 
       - name: Check CodeQL Workflow
         env:
-          GH_PAT: ${{ secrets.SUNDEV }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           gh run list --workflow "CodeQL" --json conclusion --jq '.[0].conclusion' > codeql_status.txt
           CODEQL_STATUS=$(cat codeql_status.txt)
@@ -115,7 +115,7 @@ jobs:
           sed -i 's/"name": ".*"/"name": "@netwk-pro\/web"/' build/package.json
 
       - name: Publish package
-        working-directory: ./build
+        working-directory: build/
         run: |
           if [[ "${{ matrix.registry }}" == "npmjs" ]]; then
             npm publish --access public
