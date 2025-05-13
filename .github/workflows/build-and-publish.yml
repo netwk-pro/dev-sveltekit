@@ -101,7 +101,7 @@ jobs:
             echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_NETPRO }}" >> ~/.npmrc
           else
             echo "@netwk-pro:registry=https://npm.pkg.github.com/" > ~/.npmrc
-            echo "//npm.pkg.github.com/:_authToken=${{ secrets.SUNDEV }}" >> ~/.npmrc
+            echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
           fi
 
       - name: Set up Git user
@@ -124,3 +124,6 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_NETPRO }}
+
+      - name: Clean up .npmrc
+        run: rm -f ~/.npmrc

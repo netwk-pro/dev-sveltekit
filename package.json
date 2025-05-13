@@ -58,7 +58,7 @@
     "checkout": "npm run test && npm run lint:all && npm run check"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "yaml": "^2.7.1"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.5",
@@ -82,6 +82,7 @@
     "markdownlint": "^0.38.0",
     "markdownlint-cli2": "^0.17.2",
     "mdsvex": "^0.12.5",
+    "normalize.css": "^8.0.1",
     "postcss": "^8.5.3",
     "postcss-html": "^1.8.0",
     "postcss-import": "^16.1.0",
