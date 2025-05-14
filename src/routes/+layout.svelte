@@ -11,6 +11,10 @@ This file is part of Network Pro.
   import HeaderDefault from "$lib/components/layout/HeaderDefault.svelte";
   import HeaderHome from "$lib/components/layout/HeaderHome.svelte";
 
+  // Import favicon and Apple Touch icon
+  import faviconSvg from "$lib/img/favicon.svg";
+  import appleTouchIcon from "$lib/img/icon-180x180.png";
+
   // Import global styles
   import "$lib/styles/global.css";
 
@@ -29,6 +33,12 @@ This file is part of Network Pro.
     name="description"
     content={data?.meta?.description ||
       "Locking Down Networks, Unlocking Confidence™ | Security, Networking, Privacy — Network Pro™"} />
+
+  <!-- SVG favicon from imported images -->
+  <link rel="icon" href={faviconSvg} type="image/svg+xml" />
+
+  <!-- Apple Touch icon from imported images -->
+  <link rel="apple-touch-icon" href={appleTouchIcon} type="image/png" />
 </svelte:head>
 
 <!-- BEGIN HEADER -->

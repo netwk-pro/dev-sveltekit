@@ -1,65 +1,103 @@
 <script>
-  import logoSrc from "$lib/img/logo-transparent.png";
+  import logoPng from "$lib/img/logo-web.png";
+  import logoWbp from "$lib/img/logo-web.webp";
 
   /**
    * Decoding mode for the image.
-   * @type {"sync"}
+   * @type {"sync" | "async" | "auto"}
    */
-  let decoding = "sync";
+  export let decoding = "sync";
 
   /**
    * Loading mode for the image.
-   * @type {"eager"}
+   * @type {"eager" | "lazy"}
    */
-  let loading = "eager";
+  export let loading = "eager";
 
   /**
    * CSS class for the logo image.
    * @type {string}
    */
-  let className = "logo";
-
-  /**
-   * Source of the logo image.
-   * @type {string}
-   */
-  let src = logoSrc;
+  export let className = "logo";
 
   /**
    * Alt text for the logo image.
    * @type {string}
    */
-  let alt = "Network Pro Strategies";
+  export let alt = "Network Pro Strategies";
 
   /**
    * First part of the company slogan.
    * @type {string}
    */
-  let sloganA = "Locking Down Networks";
+  export let sloganA = "Locking Down Networks";
 
   /**
    * Second part of the company slogan.
    * @type {string}
    */
-  let sloganB = "Unlocking Confidence™";
+  export let sloganB = "Unlocking Confidence™";
+
+  /**
+   * Enable/disable display of the slogan.
+   * @type {boolean}
+   */
+  export let showSlogan = true;
+
+  /**
+   * Enable/disable display of the tagline.
+   * @type {boolean}
+   */
+  export let showTagline = true;
+
+  /**
+   * Width of the logo in pixels.
+   * @type {number}
+   */
+  export let width = 250;
+
+  /**
+   * Height of the logo in pixels.
+   * @type {number}
+   */
+  export let height = 250;
+
+  /**
+   * Fetch priority for the logo image.
+   * @type {"high" | "low" | "auto"}
+   */
+  export let fetchpriority = "high";
+
+  /**
+   * Tagline text to display.
+   * @type {string}
+   */
+  export let tagline = "Security | Networking | Privacy";
 </script>
 
 <!-- BEGIN LOGO AND SITE TITLE -->
-<img
-  {decoding}
-  {loading}
-  class={className}
-  {src}
-  {alt}
-  fetchpriority="high"
-  style="width: 250px; height: 250px" />
+<picture>
+  <source srcset={logoWbp} type="image/webp" />
+  <img
+    {decoding}
+    {loading}
+    class={className}
+    src={logoPng}
+    {alt}
+    {fetchpriority}
+    style="width: {width}px; height: {height}px" />
+</picture>
 
-<div class="index-title1">
-  {sloganA}<br />
-  {sloganB}
-</div>
+{#if showSlogan}
+  <div class="index-title1">
+    {sloganA}<br />
+    {sloganB}
+  </div>
+{/if}
 
 <div class="spacer"></div>
 
-<h2 class="index-title2">Security | Networking | Privacy</h2>
+{#if showTagline}
+  <h2 class="index-title2">{tagline}</h2>
+{/if}
 <!-- END LOGO AND SITE TITLE -->

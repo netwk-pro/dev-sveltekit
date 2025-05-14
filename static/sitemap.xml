@@ -7,7 +7,7 @@
 
     <loc>https://dev.netwk.pro</loc>
 
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-05-14</lastmod>
 
     <changefreq>weekly</changefreq>
 
@@ -19,11 +19,11 @@
 
     <loc>https://dev.netwk.pro/foss-spotlight</loc>
 
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-05-14</lastmod>
 
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
 
-    <priority>0.7</priority>
+    <priority>0.8</priority>
 
   </url>
 
@@ -31,11 +31,11 @@
 
     <loc>https://dev.netwk.pro/privacy-policy</loc>
 
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-05-14</lastmod>
 
     <changefreq>monthly</changefreq>
 
-    <priority>0.7</priority>
+    <priority>0.6</priority>
 
   </url>
 
@@ -43,11 +43,11 @@
 
     <loc>https://dev.netwk.pro/license</loc>
 
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-05-14</lastmod>
 
     <changefreq>monthly</changefreq>
 
-    <priority>0.7</priority>
+    <priority>0.6</priority>
 
   </url>
 
@@ -55,11 +55,11 @@
 
     <loc>https://dev.netwk.pro/terms-of-use</loc>
 
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-05-14</lastmod>
 
     <changefreq>monthly</changefreq>
 
-    <priority>0.7</priority>
+    <priority>0.6</priority>
 
   </url>
 
@@ -67,11 +67,11 @@
 
     <loc>https://dev.netwk.pro/terms-conditions</loc>
 
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2025-05-14</lastmod>
 
     <changefreq>monthly</changefreq>
 
-    <priority>0.6</priority>
+    <priority>0.5</priority>
 
   </url>
 

@@ -8,6 +8,7 @@
 
 ### Custom ###
 .orig/
+tests-examples/
 *.local
 list-devices.js
 devices-list.json

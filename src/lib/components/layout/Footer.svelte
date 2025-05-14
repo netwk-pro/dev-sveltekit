@@ -4,6 +4,11 @@
   // Log the base path to verify its value
   console.log("Base path:", base);
 
+  // Import licensing images for the footer
+  import ccSrc from "$lib/img/cc.svg";
+  import bySrc from "$lib/img/by.svg";
+
+  // Dynamic links for licensing and trademark
   const ccbyLink = `${base}/license#cc-by`;
   const gnugplLink = `${base}/license#gnu-gpl`;
   const trademarkLink = `${base}/license#trademark`;
@@ -54,11 +59,11 @@
       externalUrl: "https://creativecommons.org/licenses/by/4.0/",
       icons: [
         {
-          src: "https://mirrors.creativecommons.org/presskit/icons/cc.svg",
+          src: ccSrc,
           alt: "Creative Commons BY",
         },
         {
-          src: "https://mirrors.creativecommons.org/presskit/icons/by.svg",
+          src: bySrc,
           alt: "Creative Commons BY",
         },
       ],
@@ -152,6 +157,7 @@
                 src={icon.src}
                 alt={icon.alt}
                 style="
+                  width: 18px !important;
                   height: 18px !important;
                   margin-left: 3px;
                   text-decoration: none;

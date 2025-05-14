@@ -1,9 +1,21 @@
-import obtaniumSrc from "$lib/img/obtainium.png";
+// Import FOSS images
+import obtainiumPng from "$lib/img/obtainium.png";
+//import obtainiumWbp from "$lib/img/obtainium.webp";
+import acodePng from "$lib/img/posts/acode.png";
+//import acodeWbp from "$lib/img/posts/acode.webp";
+import lsheetPng from "$lib/img/posts/linksheet.png";
+//import lsheetWbp from "$lib/img/posts/linksheet.webp";
+import pmxPng from "$lib/img/posts/pmx.png";
+//import pmxWbp from "$lib/img/posts/pmx.webp";
+import tosPng from "$lib/img/posts/tosdr.png";
+//import tosWbp from "$lib/img/posts/tosdr.webp";
+import urlPng from "$lib/img/posts/urlcheck.png";
+//import urlWbp from "$lib/img/posts/urlcheck.webp";
 
 export const fossData = [
   {
     id: "pmx",
-    imgSrc: "https://netwk.pro/img/posts/pmx.png",
+    imgSrc: pmxPng,
     imgAlt: "PMX",
     title: "Permission Manager X",
     headline: "Take Control of App Permissions Like a Pro with PMX!",
@@ -56,7 +68,7 @@ export const fossData = [
   },
   {
     id: "tosdr",
-    imgSrc: "https://netwk.pro/img/posts/tosdr.png",
+    imgSrc: tosPng,
     imgAlt: "TOS;DR",
     title: "TOS;DR",
     headline:
@@ -100,7 +112,7 @@ export const fossData = [
   },
   {
     id: "acode",
-    imgSrc: "https://netwk.pro/img/posts/acode.png",
+    imgSrc: acodePng,
     imgAlt: "Acode",
     title: "Acode",
     headline:
@@ -138,7 +150,7 @@ export const fossData = [
   },
   {
     id: "linksheet",
-    imgSrc: "https://netwk.pro/img/posts/linksheet.png",
+    imgSrc: lsheetPng,
     imgAlt: "LinkSheet Nightly",
     title: "LinkSheet Nightly",
     headline:
@@ -161,9 +173,10 @@ export const fossData = [
     `,
     links: [
       {
-        imgSrc: obtaniumSrc,
-        imgAlt: "Obtanium",
-        downloadText: "Obtanium App Config",
+        imgSrc: obtainiumPng,
+        imgAlt: "Obtainium",
+        hideLabels: true,  // Special flag to control rendering
+        downloadText: "Obtainium App Config",
         downloadHref:
           "https://raw.githubusercontent.com/netwk-pro/dev-sveltekit/refs/heads/master/assets/bin/linksheet.json",
       },
@@ -180,7 +193,7 @@ export const fossData = [
   },
   {
     id: "urlcheck",
-    imgSrc: "https://netwk.pro/img/posts/urlcheck.png",
+    imgSrc: urlPng,
     imgAlt: "URLCheck",
     title: "URLCheck",
     headline: "Analyze and inspect links before opening them with URLCheck.",

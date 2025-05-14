@@ -14,6 +14,10 @@ export default {
     "stylelint-config-html", // For linting HTML files
   ],
   plugins: ["stylelint-order"], // Add stylelint-order plugin
+  ignoreFiles: [
+    "./src/lib/fontawesome/**/*", // Completely ignore the fontawesome directory
+    "**/*.min.css", // Also ignore minified CSS files as a best practice
+  ],
   overrides: [
     {
       files: ["**/*.html", "**/*.svelte"], // Use postcss-html for HTML and Svelte files

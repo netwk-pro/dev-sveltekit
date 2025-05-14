@@ -5,12 +5,16 @@
 
 # Custom ignores
 .markdownlint.jsonc
-src/lib/styles/global.css
-src/lib/fontawesome/index.js
 
+
+# FontAwesome
+src/lib/fontawesome/*
 
 # SvelteKit
 .svelte-kit/*
+src/lib/*.js
+src/lib/data/*.js
+src/lib/styles/global.css
 
 # Node.js dependencies
 node_modules

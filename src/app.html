@@ -12,19 +12,14 @@
 
     <!-- Font Awesome is now self-hosted, so we removed its preconnect -->
 
+    <!-- Keep only the ICO favicon for maximum compatibility -->
     <link
       rel="icon"
       href="%sveltekit.assets%/favicon.ico"
       sizes="any"
       type="image/x-icon" />
-    <link
-      rel="icon"
-      href="%sveltekit.assets%/favicon.svg"
-      type="image/svg+xml" />
-    <link
-      rel="apple-touch-icon"
-      href="%sveltekit.assets%/favicon-180.png"
-      type="image/png" />
+
+    <!-- SVG and PNG favicons will be added by the layout component -->
 
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#ffc627" />
@@ -32,7 +27,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta name="author" content="Network Pro Strategies" />
-
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />

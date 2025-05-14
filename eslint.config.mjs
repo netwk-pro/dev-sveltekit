@@ -65,7 +65,13 @@ export default [
       "no-unused-vars": ["error", { argsIgnorePattern: "^_" }], // Ignore unused variables starting with an underscore
       "jsdoc/check-alignment": "warn", // Ensure JSDoc block tags are aligned
       "jsdoc/check-param-names": "warn", // Checks parameter names in JSDoc
-      "jsdoc/check-tag-names": "warn", // Checks if tags in JSDoc are valid
+      // Updated rule to allow the @updated tag
+      "jsdoc/check-tag-names": [
+        "warn",
+        {
+          definedTags: ["updated"],
+        },
+      ],
       "jsdoc/check-types": "warn", // Checks if types in JSDoc are defined correctly
       "jsdoc/require-param": "warn", // Requires @param in JSDoc
       "jsdoc/require-returns": "warn", // Requires @returns in JSDoc
