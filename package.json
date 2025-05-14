@@ -2,7 +2,7 @@
   "name": "@networkpro/dev-sveltekit",
   "private": false,
   "sideEffects": false,
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Locking Down Networks, Unlocking Confidence | Security, Networking, Privacy — Network Pro Strategies",
   "keywords": [
     "security",
@@ -60,6 +60,7 @@
   "devDependencies": {
     "@eslint/compat": "^1.2.5",
     "@eslint/js": "^9.18.0",
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "@playwright/test": "^1.52.0",
     "@sveltejs/adapter-netlify": "^5.0.2",
     "@sveltejs/kit": "^2.20.8",
@@ -83,7 +84,6 @@
     "postcss": "^8.5.3",
     "postcss-html": "^1.8.0",
     "postcss-import": "^16.1.0",
-    "postcss-load-config": "^6.0.1",
     "prettier": "^3.4.2",
     "prettier-plugin-svelte": "^3.3.3",
     "stylelint": "^16.19.1",

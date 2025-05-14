@@ -8,4 +8,4 @@ This file is part of Network Pro.
 // FontAwesome solids and brands
 import './css/fontawesome.min.css';
 import './css/solid.min.css';
-import './css/brands.min.css';
+import './css/brands.css';

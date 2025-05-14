@@ -504,6 +504,20 @@ footer .container {
   height: 125px;
 }
 
+.badge-cc-by {
+  width: 160px;
+  height: auto;
+}
+
+.badge-gpl {
+  width: 120px;
+  height: auto;
+}
+
 .spacer {
   margin: 2rem 0;
+}
+
+.separator {
+  margin: 0 0.5rem;
 }
