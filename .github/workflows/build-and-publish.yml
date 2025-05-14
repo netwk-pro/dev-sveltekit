@@ -109,14 +109,6 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: npm
 
-      #- name: Set up .npmrc for authentication to npmjs
-      #  run: |
-      #    echo "@networkpro:registry=https://registry.npmjs.org/" > ~/.npmrc
-      #    echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_NETPRO }}" >> ~/.npmrc
-
-      - name: Login to npmjs registry
-        run: npm login --registry=https://registry.npmjs.org/ --scope=@networkpro --always-auth --auth-type=legacy --username "sundevil311" --authToken ${{ secrets.NPM_NETPRO }}
-
       - name: Set up Git user
         run: |
           git config --global user.email "github@sl.neteng.cc"
@@ -125,9 +117,8 @@ jobs:
       - name: Publish package to npmjs
         working-directory: ./build
         run: npm publish --access public
-
-      #- name: Clean up .npmrc
-      #  run: rm -f ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_NETPRO }}
 
   publish-gpr:
     needs: build
@@ -150,14 +141,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           cache: npm
 
-      #- name: Set up .npmrc for authentication to GPR
-      #  run: |
-      #    echo "@netwk-pro:registry=https://npm.pkg.github.com/" > ~/.npmrc
-      #    echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PAT }}" >> ~/.npmrc
-
-      - name: Login to npmjs registry
-        run: npm login --registry=https://npm.pkg.github.com/ --scope=@netwk-pro --always-auth --auth-type=legacy --username "sundevil311" --authToken ${{ secrets.GH_PAT }}
-
       - name: Set up Git user
         run: |
           git config --global user.email "github@sl.neteng.cc"
@@ -170,6 +153,5 @@ jobs:
       - name: Publish package to GPR
         working-directory: ./build
         run: npm publish
-
-      #- name: Clean up .npmrc
-      #  run: rm -f ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_PAT }}
