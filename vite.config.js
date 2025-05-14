@@ -8,9 +8,21 @@ This file is part of Network Pro.
 import { sveltekit } from "@sveltejs/kit/vite";
 import { svelteTesting } from "@testing-library/svelte/vite";
 import { defineConfig } from "vite";
+import lightningcssPlugin from "vite-plugin-lightningcss";
 
 export default defineConfig({
-  plugins: [sveltekit()],
+  plugins: [
+    sveltekit(),
+    lightningcssPlugin({
+      // Minification is on by default in production
+      minify: process.env.NODE_ENV === "production",
+      // This enables CSS pruning/tree shaking with more conservative settings
+      // that are less likely to remove valid CSS
+      pruneUnusedFontFaceRules: true,
+      pruneUnusedKeyframes: true,
+      removeUnusedFontFaces: true,
+    }),
+  ],
   test: {
     // Define test configurations for both client and server
     workspace: [

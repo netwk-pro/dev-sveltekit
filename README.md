@@ -52,8 +52,8 @@ Web: <https://bio.neteng.pro>
 
 </section>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/94ec8cc0-4712-409a-b54e-2dfbe7024a42/deploy-status)](https://app.netlify.com/sites/networkpro/deploys) [![npm Version](https://img.shields.io/npm/v/%40networkpro%2Fweb?registry_uri=https%3A%2F%2Fregistry.npmjs.com&style=flat&logo=npm&logoSize=auto&labelColor=fffff&color=0c7ebe)](https://www.npmjs.com/package/@networkpro/web)  
-[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier) [![Static Badge](https://img.shields.io/badge/stylelint-%23747474?style=flat&logo=stylelint&logoSize=auto&labelColor=%23263238)](https://stylelint.io/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/94ec8cc0-4712-409a-b54e-2dfbe7024a42/deploy-status)](https://app.netlify.com/sites/networkpro/deploys) [![Build and Publish to Registries](https://github.com/netwk-pro/dev-sveltekit/actions/workflows/build-and-publish.yml/badge.svg)](https://github.com/netwk-pro/dev-sveltekit/actions/workflows/build-and-publish.yml) [![NPM Version](https://img.shields.io/npm/v/%40networkpro%2Fdev-sveltekit?registry_uri=https%3A%2F%2Fregistry.npmjs.com&style=flat&logo=npm&logoSize=auto&color=%23CB3837)](https://www.npmjs.com/package/@networkpro/dev-sveltkit)  
+[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier) [![stylelint](https://img.shields.io/badge/stylelint-%23747474?style=flat&logo=stylelint&logoSize=auto&labelColor=%23263238)](https://stylelint.io/)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/netwk-pro/netwk-pro.github.io/blob/master/CODE_OF_CONDUCT.md)
 
 ## Security That Respects You
