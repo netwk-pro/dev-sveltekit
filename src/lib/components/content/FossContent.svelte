@@ -52,29 +52,49 @@
   };
 </script>
 
-<!-- BEGIN CONTENT -->
-<article>
-  <h1 id="top">{pageInfo.title}</h1>
-  <p class={constants.classSmall}>Last updated: {pageInfo.lastUpdated}</p>
+<section id="top">
+  <span class={constants.classSmall}>
+    <a
+      rel={constants.rel}
+      href="https://spdx.dev/learn/handling-license-info"
+      target={constants.targetBlank}>
+      SPDX License Identifier
+    </a>
+    : &nbsp;<code>CC-BY-4.0 OR GPL-3.0-or-later</code>
+  </span>
+</section>
 
-  <!-- Table of Contents -->
-  <div class="toc">
-    <h2>Table of Contents</h2>
-    <ul>
-      {#each processedFossData as { id, title }}
-        <li><a href={"#" + id}>{title}</a></li>
-      {/each}
-    </ul>
-  </div>
+<section id="page-title">
+  <h1>{pageInfo.title}</h1>
+  <p>
+    <strong
+      >Highlights of Exceptional Free and Open Source Software (FOSS)</strong
+    ><br />
+    <strong>Last Updated:</strong>
+    {pageInfo.lastUpdated}
+  </p>
+</section>
 
-  <hr />
+&nbsp;
 
-  <!-- FOSS Items -->
-  {#each processedFossData as fossItem, index (fossItem.id)}
-    <FossItemContent {fossItem} />
-    {#if index < processedFossData.length - 1}
-      <hr />
-    {/if}
-  {/each}
-</article>
-<!-- END CONTENT -->
+<nav id="toc">
+  <h2>Table of Contents</h2>
+  <ul>
+    {#each processedFossData as { id, title }}
+      <li><a href={"#" + id}>{title}</a></li>
+    {/each}
+  </ul>
+</nav>
+
+<div class="spacer"></div>
+
+<hr />
+
+{#each processedFossData as fossItem, index (fossItem.id)}
+  <FossItemContent {fossItem} />
+  {#if index !== processedFossData.length - 1}
+    <div class="spacer"></div>
+    <hr class="hr-styled" />
+    <div class="spacer"></div>
+  {/if}
+{/each}
