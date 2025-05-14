@@ -4,9 +4,30 @@
   // Log the base path to verify its value
   console.log("Base path:", base);
 
+  /**
+   * URL to Terms of Use page, using the base path
+   * @type {string}
+   */
   const termsLink = `${base}/terms-of-use/`;
+
+  /**
+   * Markdown version of the Terms and Conditions document
+   * @type {string}
+   */
   const tandcLink = "https://netwk.pro/docs/terms-conditions";
 
+  /**
+   * Common constants used throughout the component
+   * @type {{
+   *   company: string,
+   *   effectiveDate: string,
+   *   rel: string,
+   *   targetBlank: string,
+   *   targetSelf: string,
+   *   classSmall: string,
+   *   hrefTop: string
+   * }}
+   */
   const constants = {
     company: "Network Pro Strategies",
     effectiveDate: "May 8, 2025",
@@ -17,6 +38,10 @@
     hrefTop: "#top",
   };
 
+  /**
+   * Table of Contents links for the terms sections
+   * @type {Array<{id: string, text: string}>}
+   */
   const tocLinks = [
     { id: "intro", text: "Introduction" },
     { id: "scope", text: "Scope of Services" },

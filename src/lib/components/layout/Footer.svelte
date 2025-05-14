@@ -105,6 +105,7 @@
   const targetBlank = "_blank";
 </script>
 
+<!-- BEGIN FOOTER -->
 <div class="copyright" {...namespaceAttributes}>
   <!-- Copyright Section -->
   <p>
@@ -173,3 +174,4 @@
     {/each}
   </p>
 </div>
+<!-- END FOOTER -->

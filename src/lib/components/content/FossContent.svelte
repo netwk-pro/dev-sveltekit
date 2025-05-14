@@ -1,50 +1,80 @@
 <script>
   import { fossData } from "$lib/data/fossData.js";
-  import FossItem from "$lib/components/content/FossItem.svelte";
+  import FossItemContent from "$lib/components/content/FossItemContent.svelte";
+
+  /**
+   * Process the FOSS data
+   * @type {any[]}
+   */
+  const processedFossData = fossData.map((item) => {
+    // Create a new object to avoid modifying the original
+    const processedItem = { ...item };
+
+    // Process the links to ensure all have required properties
+    if (item.links) {
+      processedItem.links = item.links.map((link) => {
+        // Use a type assertion to tell TypeScript this is any object
+        /** @type {any} */
+        const typedLink = link;
+
+        // Now create a new object with all default values
+        return {
+          label: typedLink.label || "Download",
+          href: typedLink.href || "#",
+          imgSrc: typedLink.imgSrc || "",
+          imgAlt: typedLink.imgAlt || "",
+          downloadText: typedLink.downloadText || "",
+          downloadHref: typedLink.downloadHref || "",
+        };
+      });
+    }
+
+    return processedItem;
+  });
+
+  /**
+   * Page information containing title and last updated date
+   * @type {{title: string, lastUpdated: string}}
+   */
+  const pageInfo = {
+    title: "FOSS Spotlight",
+    lastUpdated: "May 14, 2025",
+  };
+
+  /** @type {any} */
+  const constants = {
+    classSmall: "small-text",
+    rel: "noopener noreferrer",
+    backTop: "Back to top",
+    hrefTop: "#top",
+    targetSelf: "_self",
+    targetBlank: "_blank",
+  };
 </script>
 
-<section id="top">
-  <span class="small-text">
-    <a
-      rel="noopener noreferrer"
-      href="https://spdx.dev/learn/handling-license-info"
-      target="_blank">
-      SPDX License Identifier
-    </a>
-    : &nbsp;<code>CC-BY-4.0 OR GPL-3.0-or-later</code>
-  </span>
-</section>
+<!-- BEGIN CONTENT -->
+<article>
+  <h1 id="top">{pageInfo.title}</h1>
+  <p class={constants.classSmall}>Last updated: {pageInfo.lastUpdated}</p>
 
-<section id="page-title">
-  <h1>FOSS Spotlight</h1>
-  <p>
-    <strong
-      >Highlights of Exceptional Free and Open Source Software (FOSS)</strong
-    ><br />
-    <strong>Last Updated:</strong> May 12, 2025
-  </p>
-</section>
+  <!-- Table of Contents -->
+  <div class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+      {#each processedFossData as { id, title }}
+        <li><a href={"#" + id}>{title}</a></li>
+      {/each}
+    </ul>
+  </div>
 
-&nbsp;
+  <hr />
 
-<nav id="toc">
-  <h3>Table of Contents</h3>
-  <ul>
-    {#each fossData as { id, title }}
-      <li><a href={"#" + id}>{title}</a></li>
-    {/each}
-  </ul>
-</nav>
-
-<div class="spacer"></div>
-
-<hr />
-
-{#each fossData as fossItem, index (fossItem.id)}
-  <FossItem {fossItem} />
-  {#if index !== fossData.length - 1}
-    <div class="spacer"></div>
-    <hr class="hr-styled" />
-    <div class="spacer"></div>
-  {/if}
-{/each}
+  <!-- FOSS Items -->
+  {#each processedFossData as fossItem, index (fossItem.id)}
+    <FossItemContent {fossItem} />
+    {#if index < processedFossData.length - 1}
+      <hr />
+    {/if}
+  {/each}
+</article>
+<!-- END CONTENT -->

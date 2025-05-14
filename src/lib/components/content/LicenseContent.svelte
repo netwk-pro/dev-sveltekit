@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from "svelte";
-
   /**
    * Table of Contents Links
    * @type {{ id: string, text: string }[]}

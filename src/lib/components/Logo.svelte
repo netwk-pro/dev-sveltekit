@@ -44,6 +44,7 @@
   let sloganB = "Unlocking Confidence™";
 </script>
 
+<!-- BEGIN LOGO AND SITE TITLE -->
 <img
   {decoding}
   {loading}
@@ -60,3 +61,4 @@
 <div class="spacer"></div>
 
 <h2 class="index-title2">Security | Networking | Privacy</h2>
+<!-- END LOGO AND SITE TITLE -->

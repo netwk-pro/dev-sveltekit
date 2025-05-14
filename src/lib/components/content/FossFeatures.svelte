@@ -1,10 +1,12 @@
 <script>
   /**
-   * @type {string[]} - An array of feature strings
+   * Array of feature strings that describe the FOSS item
+   * @type {string[]}
    */
   export let features = [];
 </script>
 
+<!-- BEGIN FOSS FEATURES -->
 {#if features && features.length > 0}
   <ul>
     {#each features as feature}
@@ -12,3 +14,4 @@
     {/each}
   </ul>
 {/if}
+<!-- END FOSS FEATURES -->

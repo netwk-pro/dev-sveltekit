@@ -5,7 +5,17 @@
   import LegalNav from "$lib/components/LegalNav.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
 
+  /**
+   * @type {string}
+   * Style class for the horizontal rule element.
+   */
   const hrStyle = "hr-styled";
+
+  /**
+   * @type {string}
+   * Style class for the div element.
+   */
+  const spaceStyle = "spacer";
 </script>
 
 <link rel="canonical" href="https://dev.netwk.pro/about" />
@@ -18,7 +28,7 @@
     </section>
     <!-- END MAIN CONTENT -->
 
-    <div class="spacer"></div>
+    <div class={spaceStyle}></div>
 
     <!-- SOCIAL MEDIA -->
     <section id="social-media">
@@ -27,14 +37,14 @@
 
     <hr class={hrStyle} />
 
-    <div class="spacer"></div>
+    <div class={spaceStyle}></div>
 
     <!-- LEGAL NAVIGATION -->
     <section id="legal-nav">
       <LegalNav />
     </section>
 
-    <div class="spacer"></div>
+    <div class={spaceStyle}></div>
 
     <!-- BADGES -->
     <section id="badges">

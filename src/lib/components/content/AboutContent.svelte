@@ -1,10 +1,43 @@
 <script>
+  /**
+   * Security attribute for external links
+   * @type {string}
+   */
   const rel = "noopener noreferrer";
+
+  /**
+   * HTML attribute for async image decoding
+   * @type {"async" | "sync" | "auto"}
+   */
   const decoding = "async";
+
+  /**
+   * HTML attribute for lazy loading images
+   * @type {"lazy" | "eager"}
+   */
   const loading = "lazy";
+
+  /**
+   * CSS class for styled horizontal rule
+   * @type {string}
+   */
   const hrStyle = "hr-styled";
+
+  /**
+   * Target attribute for opening links in new tab
+   * @type {string}
+   */
   const tgtBlank = "_blank";
 
+  /**
+   * Navigation links for the page
+   * @type {Array<{
+   *   label: string,
+   *   href: string,
+   *   target: string,
+   *   text?: string
+   * }>}
+   */
   const navLinks = [
     {
       label: "SPDX License Identifier",
@@ -19,6 +52,15 @@
     },
   ];
 
+  /**
+   * PGP key information for contact emails
+   * @type {Array<{
+   *   label: string,
+   *   qrSrc: string,
+   *   keySearch: string,
+   *   fingerprint: string[]
+   * }>}
+   */
   const pgpKeys = [
     {
       label: "support@neteng.pro",
@@ -36,6 +78,13 @@
     },
   ];
 
+  /**
+   * vCard information for contact details
+   * @type {{
+   *   qrSrc: string,
+   *   vcf: string
+   * }}
+   */
   const vCard = {
     qrSrc:
       "https://raw.githubusercontent.com/netwk-pro/netwk-pro.github.io/refs/heads/master/img/qr/vcard.png",
@@ -56,7 +105,7 @@
 <section id="page-title">
   <h1>About Network Pro&trade;</h1>
   <p>
-    <strong>Network Pro Strategies</strong> (Network Pro&trade;)
+    <strong>Network Pro Strategies (Network Pro&trade;)</strong>
     <br />
     <em>Remote-First Cybersecurity & Privacy Consulting</em>
   </p>

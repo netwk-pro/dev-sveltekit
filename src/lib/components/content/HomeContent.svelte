@@ -4,7 +4,16 @@
   // Log the base path to verify its value
   console.log("Base path:", base);
 
+  /**
+   * URL to the FOSS Spotlight page, using the base path
+   * @type {string}
+   */
   const spotlightLink = `${base}/foss-spotlight`;
+
+  /**
+   * URL to the external blog
+   * @type {string}
+   */
   const blogLink = "https://blog.netwk.pro";
 
   /**
@@ -44,6 +53,7 @@
   const targetSelf = "_self";
 </script>
 
+<!-- BEGIN HOME CONTENT -->
 <h3 class={classIndex}>🔒 Practical Cybersecurity. Trusted Expertise.</h3>
 
 <p class={classCenter}>
@@ -100,3 +110,4 @@
     !
   </em>
 </p>
+<!-- END HOME CONTENT -->

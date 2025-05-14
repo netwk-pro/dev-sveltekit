@@ -4,9 +4,28 @@
   // Log the base path to verify its value
   console.log("Base path:", base);
 
+  /**
+   * URL to Terms and Conditions page, using the base path
+   * @type {string}
+   */
   const tandcLink = `${base}/terms-conditions`;
+
+  /**
+   * URL to Privacy Policy page, using the base path
+   * @type {string}
+   */
   const privacyLink = `${base}/privacy-policy`;
+
+  /**
+   * URL to License page, using the base path
+   * @type {string}
+   */
   const licenseLink = `${base}/license`;
+
+  /**
+   * Markdown version of the Terms of Use document
+   * @type {string}
+   */
   const termsLink = "https://netwk.pro/docs/terms-use";
 
   /**

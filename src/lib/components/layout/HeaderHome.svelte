@@ -49,9 +49,10 @@
   const rel = "noopener noreferrer";
 </script>
 
+<!-- BEGIN HOME HEADER -->
 <nav class="center-nav">
   {#each nav as { label, href, target, external }, index}
-    <a {rel} {href} {target}>
+    <a {href} {target} rel={external ? rel : undefined}>
       {label}
     </a>
     {#if external}
@@ -67,9 +68,10 @@
     {/if}
   {/each}
 </nav>
+<!-- END HOME HEADER -->
 
-<style>
+<!--<style>
   .separator {
     margin: 0 0.5rem;
   }
-</style>
+</style>-->

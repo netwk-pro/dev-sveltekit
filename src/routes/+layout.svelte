@@ -28,6 +28,7 @@ This file is part of Network Pro.
       "Locking Down Networks, Unlocking Confidence™ | Security, Networking, Privacy — Network Pro™"} />
 </svelte:head>
 
+<!-- BEGIN HEADER -->
 <header id="header-nav">
   <ContainerSection>
     {#if data.pathname === "/"}
@@ -39,13 +40,16 @@ This file is part of Network Pro.
     {/if}
   </ContainerSection>
 </header>
+<!-- END HEADER -->
 
 <main>
   <slot />
 </main>
 
+<!-- BEGIN FOOTER -->
 <footer id="licensing">
   <ContainerSection>
     <Footer />
   </ContainerSection>
 </footer>
+<!-- END FOOTER -->

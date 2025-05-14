@@ -17,9 +17,20 @@
   export let error;
 
   const centerText = "center-text";
+
+  // Get the pathname from the URL if available
+  const pathname =
+    typeof window !== "undefined" ? window.location.pathname : "/";
 </script>
 
 <main>
-  <h1 class={centerText}>{status}</h1>
-  <p class={centerText}>{error?.message || "Page not found"}</p>
+  <h1 class={centerText}
+    >{status} - {status === 404 ? "Page Not Found" : "Error"}</h1>
+  <p class={centerText}>
+    {#if status === 404}
+      The page "{pathname}" does not exist.
+    {:else}
+      {error?.message || "An error occurred"}
+    {/if}
+  </p>
 </main>

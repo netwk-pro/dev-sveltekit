@@ -109,10 +109,13 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: npm
 
-      - name: Login to npmjs
-        run: |
-          echo "@networkpro:registry=https://registry.npmjs.org/" > ~/.npmrc
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_NETPRO }}" >> ~/.npmrc
+      #- name: Set up .npmrc for authentication to npmjs
+      #  run: |
+      #    echo "@networkpro:registry=https://registry.npmjs.org/" > ~/.npmrc
+      #    echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_NETPRO }}" >> ~/.npmrc
+
+      - name: Login to npmjs registry
+        run: npm login --registry=https://registry.npmjs.org/ --scope=@networkpro --always-auth --auth-type=legacy --username "sundevil311" --authToken ${{ secrets.NPM_NETPRO }}
 
       - name: Set up Git user
         run: |
@@ -123,8 +126,8 @@ jobs:
         working-directory: ./build
         run: npm publish --access public
 
-      - name: Clean up .npmrc
-        run: rm -f ~/.npmrc
+      #- name: Clean up .npmrc
+      #  run: rm -f ~/.npmrc
 
   publish-gpr:
     needs: build
@@ -147,10 +150,13 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           cache: npm
 
-      - name: Login to GitHub Package Registry (GPR)
-        run: |
-          echo "@netwk-pro:registry=https://npm.pkg.github.com/" > ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
+      #- name: Set up .npmrc for authentication to GPR
+      #  run: |
+      #    echo "@netwk-pro:registry=https://npm.pkg.github.com/" > ~/.npmrc
+      #    echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PAT }}" >> ~/.npmrc
+
+      - name: Login to npmjs registry
+        run: npm login --registry=https://npm.pkg.github.com/ --scope=@netwk-pro --always-auth --auth-type=legacy --username "sundevil311" --authToken ${{ secrets.GH_PAT }}
 
       - name: Set up Git user
         run: |
@@ -159,11 +165,11 @@ jobs:
 
       - name: Update package name for GPR
         run: |
-          sed -i 's/"name": ".*"/"name": "@netwk-pro\/web"/' build/package.json
+          sed -i 's/"name": ".*"/"name": "@netwk-pro\/dev-sveltekit"/' build/package.json
 
       - name: Publish package to GPR
         working-directory: ./build
         run: npm publish
 
-      - name: Clean up .npmrc
-        run: rm -f ~/.npmrc
+      #- name: Clean up .npmrc
+      #  run: rm -f ~/.npmrc

@@ -36,6 +36,7 @@
   ];
 </script>
 
+<!-- BEGIN BADGES -->
 <div class="bnav2-wrap">
   <table class="bnav2">
     <tbody>
@@ -56,8 +57,9 @@
     </tbody>
   </table>
 </div>
+<!-- END BADGES -->
 
-<style>
+<!--<style>
   .badge-cc-by {
     width: 160px;
     height: auto;
@@ -66,4 +68,4 @@
     width: 120px;
     height: auto;
   }
-</style>
+</style>-->

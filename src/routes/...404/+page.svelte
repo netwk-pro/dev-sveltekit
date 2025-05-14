@@ -1,4 +1,8 @@
 <script>
+  /**
+   * @type {string}
+   * Style class for the h1 and p elements.
+   */
   const centerText = "center-text";
 
   /** @type {{ pathname: string } | undefined} */
@@ -8,5 +12,7 @@
   const pathname = url?.pathname ?? "/";
 </script>
 
-<h1 class={centerText}>404 - Page Not Found</h1>
-<p class={centerText}>The page "{pathname}" does not exist.</p>
+<main>
+  <h1 class={centerText}>404 - Page Not Found</h1>
+  <p class={centerText}>The page "{pathname}" does not exist.</p>
+</main>

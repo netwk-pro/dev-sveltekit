@@ -45,6 +45,7 @@
   ];
 </script>
 
+<!-- BEGIN LEGAL NAVIGATION -->
 <div class="bnav-wrap">
   <table class="bnav">
     <tbody>
@@ -64,3 +65,4 @@
     </tbody>
   </table>
 </div>
+<!-- END LEGAL NAVIGATION -->

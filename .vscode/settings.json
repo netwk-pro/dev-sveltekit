@@ -61,6 +61,8 @@
     "#top",
     "./legal",
     "./terms-of-use",
-    "./privacy-policy"
+    "./privacy-policy",
+    "#bugs",
+    "#features"
   ]
 }

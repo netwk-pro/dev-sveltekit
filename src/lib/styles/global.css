@@ -1,3 +1,17 @@
 @import "./normalize.css";
 @import "./style.css";
 @import "./default.css";
+
+.badge-cc-by {
+  width: 160px;
+  height: auto;
+}
+
+.badge-gpl {
+  width: 120px;
+  height: auto;
+}
+
+.separator {
+  margin: 0 0.5rem;
+}

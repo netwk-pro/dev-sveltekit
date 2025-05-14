@@ -42,6 +42,7 @@
   ];
 </script>
 
+<!-- BEGIN SOCIAL MEDIA -->
 <div class="soc-wrap">
   <table class="soc">
     <tbody>
@@ -59,3 +60,4 @@
     </tbody>
   </table>
 </div>
+<!-- END SOCIAL MEDIA -->

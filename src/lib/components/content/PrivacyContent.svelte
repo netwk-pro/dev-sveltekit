@@ -1,5 +1,8 @@
 <script>
-  // Constants for attributes and reusable text
+  /**
+   * URL to the privacy policy in Markdown format
+   * @type {string}
+   */
   const privacyLink = "https://netwk.pro/docs/privacy";
 
   /**
@@ -31,6 +34,17 @@
     effectiveDate: "May 8, 2025",
   };
 
+  /**
+   * Constants used throughout the component for consistent styling and behavior
+   * @type {{
+   *   classSmall: string,
+   *   rel: string,
+   *   backTop: string,
+   *   hrefTop: string,
+   *   targetSelf: string,
+   *   targetBlank: string
+   * }}
+   */
   const constants = {
     classSmall: "small-text",
     rel: "noopener noreferrer",
