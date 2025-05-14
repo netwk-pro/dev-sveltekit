@@ -14,6 +14,8 @@
    * @property {string} src - The source URL of the badge image.
    * @property {string} alt - The alt text for the badge image.
    * @property {string} class - The CSS class for styling the badge.
+   * @property {string} width - The width of the badge (CSS value).
+   * @property {string} height - The height of the badge (CSS value).
    */
 
   /**
@@ -26,17 +28,22 @@
       src: "https://forthebadge.com/images/badges/cc-by.png",
       alt: "Creative Commons BY",
       class: "badge-cc-by",
+      width: "160px",
+      height: "24px",
     },
     {
       href: gplLink,
       src: "https://img.shields.io/badge/LICENSE-GPLv3-red?style=for-the-badge&labelColor=9b9b9b&color=d0021b",
       alt: "GPL 3.0 or Later",
       class: "badge-gpl",
+      width: "120px",
+      height: "24px",
     },
   ];
 </script>
 
 <!-- BEGIN BADGES -->
+<!-- Updated 2025-05-14 10:27:25 by SunDevil311 -->
 <div class="bnav2-wrap">
   <table class="bnav2">
     <tbody>
@@ -49,7 +56,8 @@
                 loading="lazy"
                 src={badge.src}
                 alt={badge.alt}
-                class={badge.class} />
+                class={badge.class}
+                style="width: {badge.width}; height: {badge.height};" />
             </a>
           </td>
         {/each}
@@ -58,14 +66,3 @@
   </table>
 </div>
 <!-- END BADGES -->
-
-<!--<style>
-  .badge-cc-by {
-    width: 160px;
-    height: auto;
-  }
-  .badge-gpl {
-    width: 120px;
-    height: auto;
-  }
-</style>-->
