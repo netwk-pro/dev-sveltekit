@@ -3,15 +3,15 @@
 
   /**
    * Decoding mode for the image.
-   * @type {"async"}
+   * @type {"sync"}
    */
-  let decoding = "async";
+  let decoding = "sync";
 
   /**
    * Loading mode for the image.
-   * @type {"lazy"}
+   * @type {"eager"}
    */
-  let loading = "lazy";
+  let loading = "eager";
 
   /**
    * CSS class for the logo image.
@@ -51,6 +51,7 @@
   class={className}
   {src}
   {alt}
+  fetchpriority="high"
   style="width: 250px; height: 250px" />
 
 <div class="index-title1">

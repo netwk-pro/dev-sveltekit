@@ -6,10 +6,11 @@
     <title>%sveltekit.title%</title>
     <meta name="description" content="%sveltekit.description%" />
 
-    <!-- Font Awesome solids and brands -->
-    <script
-      src="https://kit.fontawesome.com/f70f03cb45.js"
-      crossorigin="anonymous"></script>
+    <!-- Preconnect optimizations for LinkedIn tracking -->
+    <link rel="preconnect" href="https://snap.licdn.com" crossorigin />
+    <link rel="preconnect" href="https://px.ads.linkedin.com" crossorigin />
+
+    <!-- Font Awesome is now self-hosted, so we removed its preconnect -->
 
     <link
       rel="icon"
@@ -29,13 +30,53 @@
     <meta name="theme-color" content="#ffc627" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <meta name="author" content="Network Pro Strategies" />
+
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
     %sveltekit.head%
   </head>
   <body>
     <div id="svelte">%sveltekit.body%</div>
+
+    <!-- LinkedIn Insight Tag - Added 2025-05-14 10:05:06 by SunDevil311 -->
+    <!-- Load LinkedIn tracking only after page content is fully loaded -->
+    <script type="text/javascript">
+      // Wait for window load event for optimal performance
+      window.addEventListener("load", function () {
+        // LinkedIn Partner ID
+        window._linkedin_partner_id = "7223748";
+        window._linkedin_data_partner_ids =
+          window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+
+        // Initialize lintrk if not already initialized
+        if (!window.lintrk) {
+          window.lintrk = function (a, b) {
+            window.lintrk.q.push([a, b]);
+          };
+          window.lintrk.q = [];
+        }
+
+        // Create and insert script element
+        var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";
+        b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);
+      });
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        alt=""
+        src="https://px.ads.linkedin.com/collect/?pid=7223748&fmt=gif" />
+    </noscript>
   </body>
 </html>

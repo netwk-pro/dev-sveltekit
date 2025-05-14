@@ -1,24 +1,11 @@
 /* ==========================================================================
-src/lib/styles/global.css
+src/lib/fontawesome/index.js
 
 SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
 This file is part of Network Pro.
 ========================================================================== */
 
-@import "./normalize.css";
-@import "./style.css";
-@import "./default.css";
-
-.badge-cc-by {
-  width: 160px;
-  height: auto;
-}
-
-.badge-gpl {
-  width: 120px;
-  height: auto;
-}
-
-.separator {
-  margin: 0 0.5rem;
-}
+// FontAwesome solids and brands
+import './css/fontawesome.min.css';
+import './css/solid.min.css';
+import './css/brands.min.css';

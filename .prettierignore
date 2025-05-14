@@ -5,6 +5,8 @@
 
 # Custom ignores
 .markdownlint.jsonc
+src/lib/styles/global.css
+src/lib/fontawesome/index.js
 
 
 # SvelteKit
