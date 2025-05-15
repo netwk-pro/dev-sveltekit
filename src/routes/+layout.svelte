@@ -11,9 +11,27 @@ This file is part of Network Pro.
   import HeaderDefault from "$lib/components/layout/HeaderDefault.svelte";
   import HeaderHome from "$lib/components/layout/HeaderHome.svelte";
 
-  // Import favicon and Apple Touch icon
+  // Import logo images and favicons and format for preloading
+  import { browser } from "$app/environment";
+  import logoPng from "$lib/img/logo-web.png";
+  import logoWbp from "$lib/img/logo-web.webp";
   import faviconSvg from "$lib/img/favicon.svg";
   import appleTouchIcon from "$lib/img/icon-180x180.png";
+
+  if (browser) {
+    // Preload logo images
+    [logoPng, logoWbp].forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    // Preload favicon SVG
+    fetch(faviconSvg).then((response) => response.text());
+
+    // Preload Apple Touch icon
+    const touchImg = new Image();
+    touchImg.src = appleTouchIcon;
+  }
 
   // Import global styles
   import "$lib/styles/global.css";
@@ -34,11 +52,24 @@ This file is part of Network Pro.
     content={data?.meta?.description ||
       "Locking Down Networks, Unlocking Confidence™ | Security, Networking, Privacy — Network Pro™"} />
 
-  <!-- SVG favicon from imported images -->
+  <!-- Standard favicon and Apple Touch icon references -->
   <link rel="icon" href={faviconSvg} type="image/svg+xml" />
+  <link rel="apple-touch-icon" href={appleTouchIcon} />
 
-  <!-- Apple Touch icon from imported images -->
-  <link rel="apple-touch-icon" href={appleTouchIcon} type="image/png" />
+  <!-- Preload links for all four critical assets -->
+  {#if browser}
+    <link rel="preload" href={logoWbp} as="image" type="image/webp" />
+    <link rel="preload" href={logoPng} as="image" type="image/png" />
+    <link rel="preload" href={faviconSvg} as="image" type="image/svg+xml" />
+    <link rel="preload" href={appleTouchIcon} as="image" type="image/png" />
+  {/if}
+
+  <!-- PWA-specific meta tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent" />
+  <meta name="theme-color" content="#ffc627" />
 </svelte:head>
 
 <!-- BEGIN HEADER -->
