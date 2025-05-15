@@ -9,6 +9,6 @@ import autoprefixer from "autoprefixer";
 
 export default {
   plugins: [
-    autoprefixer(), // Still useful for compatibility
+    autoprefixer(), // Useful for compatibility
   ],
 };

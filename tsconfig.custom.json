@@ -1,6 +1,10 @@
 /* ==========================================================================
 tsconfig.custom.json
 
+NOTE: This file is for reference only and is not actively used in the build.
+The project uses the SvelteKit-generated .svelte-kit/tsconfig.json extended by
+jsconfig.json for actual TypeScript configuration.
+
 SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
 This file is part of Network Pro.
 ========================================================================== */

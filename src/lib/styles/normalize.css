@@ -1,21 +1,21 @@
 /*! ==========================================================================
+src/lib/styles/normalize.css
+
 SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
 This file is part of Network Pro.
 =========================================================================== */
 
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/*! Originally from normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
    ========================================================================== */
 
 /**
- * 1. Correct the line height in all browsers. CONFLICTS WITH STYLE.CSS
- * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 1. Prevent adjustments of font size after orientation changes in iOS.
  */
 
 html {
-  /*  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 1 */
 }
 
 /* Sections
@@ -52,15 +52,10 @@ h1 {
 
 /**
  * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE. CONFLICTS WITH STYLE.CSS
  */
 
 hr {
   box-sizing: content-box; /* 1 */
-
-  /* height: 0; /* CONFLICTS /* 1 */
-
-  /* overflow: visible; /* 2 */
 }
 
 /**
@@ -352,13 +347,3 @@ summary {
 template {
   display: none;
 }
-
-/**
- * CONFLICTS WITH STYLE.CSS
- * Add the correct display in IE 10.
- */
-
-/*
-[hidden] {
-  display: none;
-} */

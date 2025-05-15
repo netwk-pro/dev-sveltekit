@@ -1,4 +1,13 @@
+<!-- ==========================================================================
+src/lib/pages/AboutContent.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
+  import { pgpContact, pgpSupport, vcfSrc } from "$lib";
+
   /**
    * Security attribute for external links
    * @type {string}
@@ -64,15 +73,13 @@
   const pgpKeys = [
     {
       label: "support@neteng.pro",
-      qrSrc:
-        "https://raw.githubusercontent.com/netwk-pro/netwk-pro.github.io/refs/heads/master/img/qr/pgp-support.png",
+      qrSrc: pgpSupport,
       keySearch: "https://keys.openpgp.org/search?q=support%40neteng.pro",
       fingerprint: ["6590b992e2e3eff12738", "7bce2af093e9dec61ba0"],
     },
     {
       label: "contact@s.neteng.pro",
-      qrSrc:
-        "https://raw.githubusercontent.com/netwk-pro/netwk-pro.github.io/refs/heads/master/img/qr/pgp-contact.png",
+      qrSrc: pgpContact,
       keySearch: "https://keys.openpgp.org/search?q=contact%40s.neteng.pro",
       fingerprint: ["df118baa6c2d9dcdebdc", "2ddcf99373499495f957"],
     },
@@ -86,8 +93,7 @@
    * }}
    */
   const vCard = {
-    qrSrc:
-      "https://raw.githubusercontent.com/netwk-pro/netwk-pro.github.io/refs/heads/master/img/qr/vcard.png",
+    qrSrc: vcfSrc,
     vcf: "https://raw.githubusercontent.com/netwk-pro/netwk-pro.github.io/refs/heads/master/assets/bin/contact.vcf",
   };
 </script>
@@ -216,7 +222,12 @@
             alt={`PGP Key - ${pgpKeys[0].label}`} />
         </td>
         <td class="pgp-col2">
-          <a {rel} href={pgpKeys[0].keySearch} target={tgtBlank}>
+          <a
+            {rel}
+            href={pgpKeys[0].keySearch}
+            download
+            type="application/pgp-keys"
+            target={tgtBlank}>
             <strong>{pgpKeys[0].label}</strong>
           </a>
           <p>Fingerprint:</p>
@@ -229,7 +240,12 @@
       <!-- Row 1 (Second row) has its columns swapped -->
       <tr>
         <td class="pgp-col1">
-          <a {rel} href={pgpKeys[1].keySearch} target={tgtBlank}>
+          <a
+            {rel}
+            href={pgpKeys[1].keySearch}
+            download
+            type="application/pgp-keys"
+            target={tgtBlank}>
             <strong>{pgpKeys[1].label}</strong>
           </a>
           <p>Fingerprint:</p>
@@ -260,7 +276,12 @@
         <td class="pgp-col2">
           <strong>vCard</strong>
           <p>
-            <a {rel} href={vCard.vcf} target={tgtBlank}>
+            <a
+              {rel}
+              href={vCard.vcf}
+              download
+              type="text/vcard"
+              target={tgtBlank}>
               <strong>vcf</strong>
             </a>
           </p>

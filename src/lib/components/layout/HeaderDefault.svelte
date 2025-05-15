@@ -1,3 +1,10 @@
+<!-- ==========================================================================
+src/lib/components/layout/HeaderDefault.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
   import { base } from "$app/paths";
 
@@ -75,9 +82,3 @@
   {/each}
 </nav>
 <!-- END DEFAULT HEADER -->
-
-<!--<style>
-  .separator {
-    margin: 0 0.5rem;
-  }
-</style>-->

@@ -1,15 +1,13 @@
-/* markdownlint-disable MD037, MD041 */
-
 /*! ==========================================================================
+src/lib/styles/style.css
+
 SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
 This file is part of Network Pro.
 =========================================================================== */
 
-/* markdownlint-enable MD037, MD041 */
+/*! Originally from HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
 
-/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
-
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/* https://github.com/h5bp/main.css#readme */
 
 /*
  * What follows is the result of much research on cross-browser styling.
@@ -17,9 +15,9 @@ This file is part of Network Pro.
  * Kroc Camen, and the H5BP dev community and team.
  */
 
-/*! ==========================================================================
+/* ==========================================================================
    Base styles: opinionated defaults
-=========================================================================== */
+========================================================================== */
 
 html {
   font-size: 1em;
@@ -93,9 +91,9 @@ textarea {
   resize: vertical;
 }
 
-/*! ==========================================================================
+/* ==========================================================================
    Author's custom styles
-=========================================================================== */
+========================================================================== */
 
 /*
  * Additional line added to hr{} under 'Base Styles'
@@ -110,7 +108,6 @@ body {
 
 /* parent link element */
 a {
-  /* align-content: center; */
   text-decoration: none;
 }
 
@@ -147,9 +144,9 @@ a:visited:hover {
   color: #7f6227;
 }
 
-/*! ==========================================================================
+/* ==========================================================================
    Helper classes
-=========================================================================== */
+========================================================================== */
 
 /*
  * Hide visually and from screen readers
@@ -225,11 +222,11 @@ a:visited:hover {
   clear: both;
 }
 
-/*! ==========================================================================
+/* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
-=========================================================================== */
+========================================================================== */
 
 @media only screen and (width >= 35em) {
   /* Style adjustments for viewports that meet the condition */
@@ -242,11 +239,11 @@ a:visited:hover {
   /* Style adjustments for high resolution devices */
 }
 
-/*! ==========================================================================
+/* ==========================================================================
    Print styles.
    Inlined to avoid the additional HTTP request:
    https://www.phpied.com/delay-loading-your-print-css/
-=========================================================================== */
+========================================================================== */
 
 /* stylelint-disable order/properties-order -- Maintain spreadsheet consistency */
 @media print {

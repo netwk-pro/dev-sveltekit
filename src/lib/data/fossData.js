@@ -1,21 +1,20 @@
+/* ==========================================================================
+src/lib/data/fossData.js
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== */
+
 // Import FOSS images
-import obtainiumPng from "$lib/img/obtainium.png";
-//import obtainiumWbp from "$lib/img/obtainium.webp";
-import acodePng from "$lib/img/posts/acode.png";
-//import acodeWbp from "$lib/img/posts/acode.webp";
-import lsheetPng from "$lib/img/posts/linksheet.png";
-//import lsheetWbp from "$lib/img/posts/linksheet.webp";
-import pmxPng from "$lib/img/posts/pmx.png";
-//import pmxWbp from "$lib/img/posts/pmx.webp";
-import tosPng from "$lib/img/posts/tosdr.png";
-//import tosWbp from "$lib/img/posts/tosdr.webp";
-import urlPng from "$lib/img/posts/urlcheck.png";
-//import urlWbp from "$lib/img/posts/urlcheck.webp";
+import { acodePng, acodeWbp, lsheetPng, lsheetWbp, pmxPng, pmxWbp, tosPng, tosWbp, urlPng, urlWbp } from "$lib";
 
 export const fossData = [
   {
     id: "pmx",
-    imgSrc: pmxPng,
+    images: {
+      webp: pmxWbp,
+      png: pmxPng,
+    },
     imgAlt: "PMX",
     title: "Permission Manager X",
     headline: "Take Control of App Permissions Like a Pro with PMX!",
@@ -68,7 +67,10 @@ export const fossData = [
   },
   {
     id: "tosdr",
-    imgSrc: tosPng,
+    images: {
+      webp: tosWbp,
+      png: tosPng,
+    },
     imgAlt: "TOS;DR",
     title: "TOS;DR",
     headline:
@@ -112,7 +114,10 @@ export const fossData = [
   },
   {
     id: "acode",
-    imgSrc: acodePng,
+    images: {
+      webp: acodeWbp,
+      png: acodePng,
+    },
     imgAlt: "Acode",
     title: "Acode",
     headline:
@@ -150,7 +155,10 @@ export const fossData = [
   },
   {
     id: "linksheet",
-    imgSrc: lsheetPng,
+    images: {
+      webp: lsheetWbp,
+      png: lsheetPng,
+    },
     imgAlt: "LinkSheet Nightly",
     title: "LinkSheet Nightly",
     headline:
@@ -173,7 +181,6 @@ export const fossData = [
     `,
     links: [
       {
-        imgSrc: obtainiumPng,
         imgAlt: "Obtainium",
         hideLabels: true,  // Special flag to control rendering
         downloadText: "Obtainium App Config",
@@ -193,7 +200,10 @@ export const fossData = [
   },
   {
     id: "urlcheck",
-    imgSrc: urlPng,
+    images: {
+      webp: urlWbp,
+      png: urlPng,
+    },
     imgAlt: "URLCheck",
     title: "URLCheck",
     headline: "Analyze and inspect links before opening them with URLCheck.",

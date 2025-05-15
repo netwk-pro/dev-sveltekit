@@ -1,5 +1,5 @@
 /* ==========================================================================
-+layout.js
+src/routes/+layout.js
 
 SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
 This file is part of Network Pro.
@@ -58,7 +58,7 @@ const meta = {
 const defaultMeta = {
   title: "Loading... | Network Pro™",
   description:
-    "Please wait while the content loads. Locking Down Networks, Unlocking Confidence™ | Security, Networking, Privacy — Network Pro™",
+    "Please wait while the content loads... | Security, Networking, Privacy — Network Pro™",
 };
 
 export const prerender = true;

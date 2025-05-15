@@ -1,12 +1,12 @@
 <!-- ==========================================================================
-+layout.svelte
+src/routes/+layout.svelte
 
 SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
 This file is part of Network Pro.
 ========================================================================== -->
 
 <script>
-  import ContainerSection from "$lib/components/layout/ContainerSection.svelte";
+  import ContainerSection from "$lib/components/ContainerSection.svelte";
   import Footer from "$lib/components/layout/Footer.svelte";
   import HeaderDefault from "$lib/components/layout/HeaderDefault.svelte";
   import HeaderHome from "$lib/components/layout/HeaderHome.svelte";

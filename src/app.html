@@ -3,14 +3,19 @@
   <head>
     <meta charset="utf-8" />
 
+    <!-- =====================================================================
+    SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+    This file is part of Network Pro.
+    ===================================================================== -->
+
     <title>%sveltekit.title%</title>
     <meta name="description" content="%sveltekit.description%" />
 
-    <!-- Preconnect optimizations for LinkedIn tracking -->
+    <!-- Preconnect optimizations for LinkedIn -->
     <link rel="preconnect" href="https://snap.licdn.com" crossorigin />
     <link rel="preconnect" href="https://px.ads.linkedin.com" crossorigin />
 
-    <!-- Font Awesome is now self-hosted, so we removed its preconnect -->
+    <!-- FontAwesome is self-hosted, so its preconnect has been removed -->
 
     <!-- Keep only the ICO favicon for maximum compatibility -->
     <link
@@ -37,7 +42,7 @@
     <div id="svelte">%sveltekit.body%</div>
 
     <!-- LinkedIn Insight Tag - Added 2025-05-14 10:05:06 by SunDevil311 -->
-    <!-- Load LinkedIn tracking only after page content is fully loaded -->
+    <!-- Load LinkedIn script only after page content is fully loaded -->
     <script type="text/javascript">
       // Wait for window load event for optimal performance
       window.addEventListener("load", function () {

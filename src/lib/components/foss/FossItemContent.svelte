@@ -1,5 +1,14 @@
+<!-- ==========================================================================
+src/lib/components/foss/FossItemContent.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
-  import Features from "$lib/components/content/FossFeatures.svelte";
+  import FossFeatures from "$lib/components/foss/FossFeatures.svelte";
+  // Import directly from $lib by way of image utility
+  import { obtainiumPng, obtainiumWbp } from "$lib";
 
   /** @type {"noopener noreferrer"} */
   const rel = "noopener noreferrer";
@@ -18,7 +27,10 @@
    * @type {{
    *   id: string,
    *   title: string,
-   *   imgSrc: string,
+   *   images: {
+   *     webp: string,
+   *     png: string
+   *   },
    *   imgAlt: string,
    *   headline: string,
    *   headlineDescription: string,
@@ -28,7 +40,6 @@
    *   links: Array<{
    *     label?: string,
    *     href?: string,
-   *     imgSrc?: string,
    *     imgAlt?: string,
    *     downloadText?: string,
    *     downloadHref?: string,
@@ -46,13 +57,16 @@
       <tbody>
         <tr>
           <td class="foss-cell">
-            <img
-              decoding="sync"
-              loading="eager"
-              fetchpriority="high"
-              src={fossItem.imgSrc}
-              alt={fossItem.imgAlt}
-              style="width: 50px; height: 50px" />
+            <picture>
+              <source srcset={fossItem.images.webp} type="image/webp" />
+              <img
+                decoding="sync"
+                loading="eager"
+                fetchpriority="high"
+                src={fossItem.images.png}
+                alt={fossItem.imgAlt}
+                style="width: 50px; height: 50px" />
+            </picture>
           </td>
           <td class="foss-cell">
             <h2>{fossItem.title}</h2>
@@ -66,7 +80,7 @@
 
   {@html fossItem.headlineDescription}
 
-  <Features features={fossItem.features} />
+  <FossFeatures features={fossItem.features} />
 
   {@html fossItem.detailsDescription}
 
@@ -79,42 +93,49 @@
   &nbsp;
 
   <div class="linksheet">
-    {#each fossItem.links as { label, href, imgSrc, imgAlt, downloadText, downloadHref, hideLabels }, i}
+    <!-- Special handling for LinkSheet's Obtainium link -->
+    {#if fossItem.id === "linksheet"}
       <div class="linksheet-entry">
-        {#if imgSrc}
-          <a {rel} href={obtainiumLink} target="_blank">
+        <a {rel} href={obtainiumLink} target="_blank">
+          <picture>
+            <source srcset={obtainiumWbp} type="image/webp" />
             <img
-              decoding={i === 0 ? "sync" : decoding}
-              loading={i === 0 ? "eager" : loading}
-              fetchpriority={i === 0 ? "high" : "auto"}
-              src={imgSrc}
-              alt={imgAlt || label}
-              style="width: 207px; height: 80px;" />
+              decoding="sync"
+              loading="eager"
+              fetchpriority="high"
+              src={obtainiumPng}
+              alt="Obtainium"
+              style="width: 207px; height: 80px" />
+          </picture>
+        </a>
+        <p>
+          <span style="color: #ffc627"
+            ><i class="fas fa-file-arrow-down" style="margin-left: 8px;"></i
+            ></span>
+          <a
+            {rel}
+            href="https://raw.githubusercontent.com/netwk-pro/dev-sveltekit/refs/heads/master/assets/bin/linksheet.json"
+            download
+            type="application/json"
+            style="margin-left: 8px;"
+            target="_blank">
+            Obtainium App Config
           </a>
-          <!-- Download link if needed -->
-          {#if downloadText && downloadHref}
-            <!-- Download link content -->
-            <p>
-              <span style="color: #ffc627"
-                ><i class="fas fa-file-arrow-down" style="margin-left: 8px;"></i
-                ></span>
-              <a
-                {rel}
-                href={downloadHref}
-                download
-                style="margin-left: 8px;"
-                target="_blank">
-                {downloadText}
-              </a>
-            </p>
-          {/if}
-          <!-- Only render label/href if hideLabels is not true -->
-        {:else if !hideLabels && label && href}
-          <!-- Text-only link rendering -->
-          <strong>{label}:</strong>
-          <a {rel} {href} target="_blank">{href}</a>
-        {/if}
+        </p>
       </div>
+    {/if}
+
+    <!-- Other links -->
+    {#each fossItem.links as { label, href, imgAlt, downloadText, downloadHref, hideLabels }, i}
+      <!-- Skip the first link for LinkSheet since we already handled it separately -->
+      {#if !(fossItem.id === "linksheet" && i === 0)}
+        <div class="linksheet-entry">
+          {#if !hideLabels && label && href}
+            <strong>{label}:</strong>
+            <a {rel} {href} target="_blank">{href}</a>
+          {/if}
+        </div>
+      {/if}
     {/each}
   </div>
 

@@ -1,3 +1,10 @@
+<!-- ==========================================================================
+src/routes/...404/+page.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
   /**
    * @type {string}

@@ -1,7 +1,14 @@
+<!-- ==========================================================================
+src/routes/privacy-policy/+page.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
   import Badges from "$lib/components/Badges.svelte";
   import FullWidthSection from "$lib/components/FullWidthSection.svelte";
-  import PrivacyContent from "$lib/components/content/PrivacyContent.svelte";
+  import PrivacyContent from "$lib/pages/PrivacyContent.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
 
