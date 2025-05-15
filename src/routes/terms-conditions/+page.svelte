@@ -1,7 +1,14 @@
+<!-- ==========================================================================
+src/routes/terms-conditions/+page.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
   import Badges from "$lib/components/Badges.svelte";
   import FullWidthSection from "$lib/components/FullWidthSection.svelte";
-  import TermsConditionsContent from "$lib/components/content/TermsConditionsContent.svelte";
+  import TermsConditionsContent from "$lib/pages/TermsConditionsContent.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
 

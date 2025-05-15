@@ -1,7 +1,14 @@
+<!-- ==========================================================================
+src/routes/license/+page.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
   import Badges from "$lib/components/Badges.svelte";
   import FullWidthSection from "$lib/components/FullWidthSection.svelte";
-  import LicenseContent from "$lib/components/content/LicenseContent.svelte";
+  import LicenseContent from "$lib/pages/LicenseContent.svelte";
   import LegalNav from "$lib/components/LegalNav.svelte";
   import SocialMedia from "$lib/components/SocialMedia.svelte";
 

@@ -1,6 +1,13 @@
+<!-- ==========================================================================
+src/lib/components/Logo.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
-  import logoPng from "$lib/img/logo-web.png";
-  import logoWbp from "$lib/img/logo-web.webp";
+  // Import logo images
+  import { logoPng, logoWbp } from "$lib";
 
   /**
    * Decoding mode for the image.
@@ -90,7 +97,7 @@
 
 {#if showSlogan}
   <div class="index-title1">
-    {sloganA}<br />
+    {sloganA},<br />
     {sloganB}
   </div>
 {/if}

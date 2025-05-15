@@ -1,12 +1,17 @@
+<!-- ==========================================================================
+src/lib/components/layout/Footer.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
   import { base } from "$app/paths";
+  // Import icons for licenses
+  import { bySvg, ccSvg } from "$lib";
 
   // Log the base path to verify its value
   console.log("Base path:", base);
-
-  // Import licensing images for the footer
-  import ccSrc from "$lib/img/cc.svg";
-  import bySrc from "$lib/img/by.svg";
 
   // Dynamic links for licensing and trademark
   const ccbyLink = `${base}/license#cc-by`;
@@ -59,11 +64,11 @@
       externalUrl: "https://creativecommons.org/licenses/by/4.0/",
       icons: [
         {
-          src: ccSrc,
+          src: ccSvg,
           alt: "Creative Commons BY",
         },
         {
-          src: bySrc,
+          src: bySvg,
           alt: "Creative Commons BY",
         },
       ],

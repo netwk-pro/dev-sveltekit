@@ -16,7 +16,7 @@ This file is part of Network Pro.
 
 // Re-export images from dedicated images.js file
 // This maintains backward compatibility with existing imports
-export * from "./index.js";
+export * from "./images.js";
 
 // Export utility functions
 // Uncomment and adjust these as needed for your project

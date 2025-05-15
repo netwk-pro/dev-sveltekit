@@ -1,6 +1,13 @@
+<!-- ==========================================================================
+src/lib/pages/FossContent.svelte
+
+SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
+This file is part of Network Pro.
+========================================================================== -->
+
 <script>
   import { fossData } from "$lib/data/fossData.js";
-  import FossItemContent from "$lib/components/content/FossItemContent.svelte";
+  import FossItemContent from "$lib/components/foss/FossItemContent.svelte";
 
   /**
    * Process the FOSS data
@@ -91,10 +98,12 @@
 <hr />
 
 {#each processedFossData as fossItem, index (fossItem.id)}
-  <FossItemContent {fossItem} />
+  <FossItemContent {fossItem} isFirst={index === 0} />
   {#if index !== processedFossData.length - 1}
     <div class="spacer"></div>
+
     <hr class="hr-styled" />
+
     <div class="spacer"></div>
   {/if}
 {/each}
