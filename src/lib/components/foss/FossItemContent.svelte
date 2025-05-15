@@ -48,6 +48,13 @@ This file is part of Network Pro.
    * }}
    */
   export let fossItem;
+
+  /**
+   * Flag indicating if this is the first FOSS item in the list.
+   * Only the first item should use eager loading.
+   * @type {boolean}
+   */
+  export let isFirst = false;
 </script>
 
 <!-- BEGIN FOSS ITEMS -->
@@ -60,9 +67,9 @@ This file is part of Network Pro.
             <picture>
               <source srcset={fossItem.images.webp} type="image/webp" />
               <img
-                decoding="sync"
-                loading="eager"
-                fetchpriority="high"
+                decoding={isFirst ? "sync" : decoding}
+                loading={isFirst ? "eager" : loading}
+                fetchpriority={isFirst ? "high" : "auto"}
                 src={fossItem.images.png}
                 alt={fossItem.imgAlt}
                 style="width: 50px; height: 50px" />
@@ -100,9 +107,9 @@ This file is part of Network Pro.
           <picture>
             <source srcset={obtainiumWbp} type="image/webp" />
             <img
-              decoding="sync"
-              loading="eager"
-              fetchpriority="high"
+              decoding={isFirst ? "sync" : decoding}
+              loading={isFirst ? "eager" : loading}
+              fetchpriority={isFirst ? "high" : "auto"}
               src={obtainiumPng}
               alt="Obtainium"
               style="width: 207px; height: 80px" />

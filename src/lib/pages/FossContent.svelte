@@ -98,10 +98,12 @@ This file is part of Network Pro.
 <hr />
 
 {#each processedFossData as fossItem, index (fossItem.id)}
-  <FossItemContent {fossItem} />
+  <FossItemContent {fossItem} isFirst={index === 0} />
   {#if index !== processedFossData.length - 1}
     <div class="spacer"></div>
+
     <hr class="hr-styled" />
+
     <div class="spacer"></div>
   {/if}
 {/each}
