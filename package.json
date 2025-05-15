@@ -2,7 +2,7 @@
   "name": "@networkpro/dev-sveltekit",
   "private": false,
   "sideEffects": false,
-  "version": "0.8.2",
+  "version": "0.9.0",
   "description": "Locking Down Networks, Unlocking Confidence | Security, Networking, Privacy — Network Pro Strategies",
   "keywords": [
     "security",
@@ -52,11 +52,13 @@
     "lint:md": "npx markdownlint-cli2 \"**/*.{md,markdown}\" \"#node_modules/**\" \"#build/**\"",
     "lint:css": "stylelint \"**/*.{css,svelte}\" --ignore-path .stylelintignore",
     "lint:all": "npm run lint && npm run lint:md && npm run lint:css && npm run format",
-    "test:unit": "vitest",
-    "test": "npm run test:unit -- --run",
-    "test:watch": "vitest --watch",
-    "test:coverage": "vitest --coverage",
-    "checkout": "npm run test && npm run lint:all && npm run check"
+    "test": "npm run test:all",
+    "test:all": "npm run test:client -- --run && npm run test:server -- --run",
+    "test:client": "vitest --config vitest.config.client.js",
+    "test:server": "vitest --config vitest.config.server.js",
+    "test:watch": "vitest --config vitest.config.client.js --watch",
+    "test:coverage": "npm run test:client -- --run --coverage && npm run test:server -- --run --coverage",
+    "checkout": "npm run test:all && npm run lint:all && npm run check"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.5",
@@ -83,7 +85,6 @@
     "normalize.css": "^8.0.1",
     "postcss": "^8.5.3",
     "postcss-html": "^1.8.0",
-    "postcss-import": "^16.1.0",
     "prettier": "^3.4.2",
     "prettier-plugin-svelte": "^3.3.3",
     "stylelint": "^16.19.1",

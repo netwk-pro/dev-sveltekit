@@ -8,7 +8,6 @@
 
 ### Custom ###
 .orig/
-tests-examples/
 *.local
 list-devices.js
 devices-list.json
@@ -36,6 +35,9 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Vitest
+/reports
 
 
 ### Node ###
