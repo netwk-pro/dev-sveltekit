@@ -61,7 +61,7 @@ const defaultMeta = {
     "Please wait while the content loads... | Security, Networking, Privacy — Network Pro™",
 };
 
-export const prerender = true;
+export const prerender = "auto";
 export const trailingSlash = "never";
 
 /**
