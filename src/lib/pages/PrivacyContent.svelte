@@ -6,6 +6,17 @@ This file is part of Network Pro.
 ========================================================================== -->
 
 <script>
+  import { base } from "$app/paths";
+
+  // Log the base path to verify its value
+  console.log("Base path:", base);
+
+  /**
+   * URL to the Privacy Rights Request Form redirect route, using the base path
+   * @type {string}
+   */
+  const prightsLink = `${base}/privacy-rights`;
+
   /**
    * URL to the privacy policy in Markdown format
    * @type {string}
@@ -197,7 +208,7 @@ This file is part of Network Pro.
       <p>
         To exercise these rights, please use our <a
           rel={constants.rel}
-          href="https://privacy.neteng.pro"
+          href={prightsLink}
           target={constants.targetBlank}>Privacy Rights Request Form</a>
         or email us at <code>{contactInfo.email}</code>.
       </p>

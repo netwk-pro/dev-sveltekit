@@ -41,5 +41,6 @@
   // Custom CSS data for FontAwesome classes
   "css.customData": [
     ".vscode/customData.json" // Path to your custom data file
-  ]
+  ],
+  "markdown.validate.ignoredLinks": ["#bugs", "#features", "#top"]
 }
