@@ -1,5 +1,3 @@
-# .github/ISSUE_TEMPLATE/config.yml
-#
 # SPDX-License-Identifier: CC-BY-4.0 OR GPL-3.0-or-later
 # This file is part of Network Pro
 
@@ -11,3 +9,6 @@ contact_links:
   - name: Commonly asked questions
     url: https://stackoverflowteams.com/c/netwk-pro/questions
     about: Ask and answer common questions on Stack Overflow Teams.
+  - name: Contact Network Pro Strategies
+    url: https://netwk.pro/contact?utm_source=github
+    about: Contact Network Pro Strategies for support or inquiries.

@@ -8,7 +8,14 @@
 
 
 # FontAwesome
-src/lib/fontawesome/*
+src/lib/styles/css/brands.css
+src/lib/styles/css/fa-global.css
+src/lib/styles/fontawesome/index.js
+
+# Minified and sensitive CSS
+*.min.css
+src/lib/styles/all-globals.css
+src/lib/styles/css/global.css
 
 # SvelteKit
 .svelte-kit/*
