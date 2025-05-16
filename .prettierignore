@@ -9,12 +9,10 @@
 
 # FontAwesome
 src/lib/styles/css/brands.css
-src/lib/styles/css/fa-global.css
-src/lib/styles/fontawesome/index.js
 
-# Minified and sensitive CSS
+# Minified CSS and CSS imports
 *.min.css
-src/lib/styles/all-globals.css
+src/lib/styles/fa-global.css
 src/lib/styles/css/global.css
 
 # SvelteKit

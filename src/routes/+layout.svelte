@@ -36,9 +36,6 @@ This file is part of Network Pro.
   // Import global and FontAwesome styles and web fonts
   import "$lib/styles";
 
-  // Import FontAwesome styles and web fonts
-  //import "$lib/fontawesome";
-
   export let data;
 
   // Pathname normalization takes place in +layout.js

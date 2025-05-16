@@ -15,10 +15,9 @@ export default {
   ],
   plugins: ["stylelint-order"], // Add stylelint-order plugin
   ignoreFiles: [
-    "./src/lib/styles/all-globals.css", // Ignore CSS import files
     "./src/lib/styles/global.css", // Ignore CSS import files
+    "./src/lib/styles/fa-global.css", // Ignore CSS import files
     "./src/lib/styles/css/brands.css", // Ignore FontAwesome CSS files
-    "./src/lib/styles/css/fa-global.css", // Ignore FontAwesome CSS files
     "**/*.min.css", // Also ignore minified CSS files as a best practice
   ],
   overrides: [
