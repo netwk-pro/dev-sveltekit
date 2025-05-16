@@ -14,13 +14,11 @@ devices-list.json
 
 
 # Scripts
-/scripts
+scripts/*
+!scripts/bundleCss.js
 
 # Source maps
 *.map
-
-# Scripts
-/scripts
 
 # Source maps
 *.map
