@@ -9,8 +9,7 @@ export default defineConfig({
       minify: process.env.NODE_ENV === "production",
       pruneUnusedFontFaceRules: true,
       pruneUnusedKeyframes: true,
-      removeUnusedFontFaces: false, // safer unless 100% static
-      browserslist: true, // respect browserslist config
+      removeUnusedFontFaces: true,
       // Enables nesting support in Lightning CSS
       //drafts: {
       //  nesting: true

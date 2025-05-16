@@ -33,11 +33,11 @@ This file is part of Network Pro.
     touchImg.src = appleTouchIcon;
   }
 
-  // Import global styles
-  import "$lib/styles/global.css";
+  // Import global and FontAwesome styles and web fonts
+  import "$lib/styles";
 
   // Import FontAwesome styles and web fonts
-  import "$lib/fontawesome";
+  //import "$lib/fontawesome";
 
   export let data;
 
@@ -65,6 +65,7 @@ This file is part of Network Pro.
   {/if}
 
   <!-- PWA-specific meta tags -->
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta
     name="apple-mobile-web-app-status-bar-style"

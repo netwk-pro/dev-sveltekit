@@ -2,7 +2,7 @@
   "name": "@networkpro/dev-sveltekit",
   "private": false,
   "sideEffects": false,
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "Locking Down Networks, Unlocking Confidence | Security, Networking, Privacy — Network Pro Strategies",
   "keywords": [
     "security",
@@ -58,6 +58,8 @@
     "test:server": "vitest --config vitest.config.server.js",
     "test:watch": "vitest --config vitest.config.client.js --watch",
     "test:coverage": "npm run test:client -- --run --coverage && npm run test:server -- --run --coverage",
+    "css:multiple": "node scripts/multipleBundleCss.js",
+    "css:single": "node scripts/singleBundleCss.js",
     "checkout": "npm run test:all && npm run lint:all && npm run check"
   },
   "devDependencies": {
@@ -79,6 +81,7 @@
     "globals": "^16.0.0",
     "jsdom": "^26.0.0",
     "lightningcss": "^1.30.1",
+    "lightningcss-cli": "^1.30.1",
     "markdownlint": "^0.38.0",
     "markdownlint-cli2": "^0.17.2",
     "mdsvex": "^0.12.5",
