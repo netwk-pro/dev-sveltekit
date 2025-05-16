@@ -12,6 +12,11 @@
 list-devices.js
 devices-list.json
 
+# Scripts
+/scripts
+
+# Source maps
+*.map
 
 # Scripts
 /scripts
