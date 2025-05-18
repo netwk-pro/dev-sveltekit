@@ -2,12 +2,8 @@
   command = "npm run build"
   publish = "build"
 
-[[plugins]]
-package = "@netlify/plugin-sitemap"
-
-  [plugins.inputs]
-  buildDir = "build"
-  filePath = "static/sitemap.xml"
-  trailingSlash = true
-  changeFreq = "monthly"
-  priority = 0.5
+[[redirects]]
+  from = "https://dev.netwk.pro/*"
+  to = "https://netwk.pro/:splat"
+  status = 301
+  force = true
