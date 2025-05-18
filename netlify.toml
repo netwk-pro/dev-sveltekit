@@ -1,9 +1,3 @@
 [build]
   command = "npm run build"
   publish = "build"
-
-[[redirects]]
-  from = "https://dev.netwk.pro/*"
-  to = "https://netwk.pro/:splat"
-  status = 301
-  force = true
